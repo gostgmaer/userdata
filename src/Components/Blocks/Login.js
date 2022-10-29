@@ -1,24 +1,71 @@
 // import { async } from "@firebase/util";
 import React from "react";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useContext } from "react";
+import AuthContext from "../../Context/AuthProvider";
+import axios from "../../api/axios";
+import jwt_decode from "jwt-decode";
 
+const LOGIN_URL = "/userauth/authservice/session";
 function Login() {
+  const { setAuth } = useContext(AuthContext);
   const userRef = useRef();
   const errRef = useRef();
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const [errmsg, SetErrmsg] = useState("");
   const [succcess, setSuccess] = useState();
+
   useEffect(() => {
     userRef.current.focus();
   }, []);
+
   useEffect(() => {
     SetErrmsg("");
   }, [user, password]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(user, password);
-    setSuccess(true);
+    const hashedPassword  = btoa(password);
+    try {
+      let loginObject = {
+        grant_type: "password",
+        password: hashedPassword,
+        provider_type: "ldap-internal",
+        searchKey: "mail",
+        searchVal: user,
+      };
+
+      let response = await axios.post(
+        LOGIN_URL,
+        loginObject,
+        {
+          headers: { "Content-Type": "application/json","authorization":"Basic c2NoZWR1bGluZ3NlcnZlcjpwYXNzd29yZEAxMjM=" },
+          withCredentials: true,
+        }
+      );
+
+        response  = response["data"]
+      const userData = jwt_decode(response["access_token"])
+    //   console.log(userData);
+      const accessToken = response["access_token"];
+      const roles = userData["payload"]["role"];
+      setAuth({ user, password, roles, accessToken });
+
+    //   console.log(setAuth);
+      console.log(user, password, roles, accessToken);
+      setSuccess(true);
+    } catch (error) {
+      if (!error?.response) {
+        SetErrmsg("Server Not Respond");
+      } else if (error.response?.status === 400) {
+        SetErrmsg("Missing Username or Password");
+      } else if (error.response?.status === 401) {
+        SetErrmsg("Unauthorize");
+      } else {
+        SetErrmsg("Login Failed");
+      }
+      errRef.current.focus();
+    }
   };
   return (
     <React.Fragment>
