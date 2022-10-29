@@ -1,13 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
-import Header from './Components/Header';
-import Registration from './Components/Registration';
+import Registration from './Components/Blocks/Registration';
+import Header from './Components/ComponentsParts/Header';
+import Login from './Components/Blocks/Login';
 
 function App() {
   return (
     <div className="App">
       <Header></Header>
-      <Registration></Registration>
+      {/* <Registration></Registration> */}
+      <Login></Login>
     </div>
   );
 }

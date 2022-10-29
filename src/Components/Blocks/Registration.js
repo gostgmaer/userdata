@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import "../Assets/Styles.scss";
-import { database } from "../services/Firebase";
+import { database } from "../../services/Firebase";
 import { ref, push, child, update } from "firebase/database";
 
 function Registration() {
