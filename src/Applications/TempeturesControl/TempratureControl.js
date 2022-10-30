@@ -3,34 +3,32 @@ import "./Styles.scss";
 const initialTemp = 10;
 let initialColor = "neutral";
 const reducer = (state, action) => {
+
   switch (action) {
     case "increase":
         state = state+1
-      if (state < 15) {
+        colors(state);
+      return state
+
+    case "decrease":
+        state = state-1
+        colors(state);
+      return state
+
+    default:
+      return state;
+  }
+ 
+};
+let colors =(state)=>{
+    if (state < 15) {
         initialColor = "cold";
       }else if (state>24 ) {
         initialColor = "hot";
       }else if (state<25 ) {
         initialColor = "neutral";
       }
-      return state
-
-    case "decrease":
-        state = state-1
-        if (state < 15) {
-            initialColor = "cold";
-          }else if (state>24 ) {
-            initialColor = "hot";
-          }else if (state<25 ) {
-            initialColor = "neutral";
-          }
-      return state
-
-    default:
-      return state;
   }
-};
-
 function TempratureControl() {
   const [temp, tempDispatch] = useReducer(reducer, initialTemp);
   const [color, setColor] = useState("cold");
