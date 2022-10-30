@@ -6,6 +6,9 @@ import Login from './Components/Blocks/Login';
 import Notify from './Utils/Notification/notify';
 import Counter from './Applications/Counter/Counter';
 import TempratureControl from './Applications/TempeturesControl/TempratureControl';
+import SearchFilter from './Applications/SearchFilter/SearchFilter';
+import UserRegistration from './Applications/RegistrationPage/UserRegistration';
+import Ticker from './Applications/TimerTicker/Ticker';
 
 function App() {
   return (
@@ -15,7 +18,10 @@ function App() {
       {/* <Login></Login> */}
       {/* <Notify></Notify> */}
       {/* <Counter></Counter> */}
-      <TempratureControl></TempratureControl>
+      {/* <TempratureControl></TempratureControl> */}
+      {/* <SearchFilter></SearchFilter> */}
+      <UserRegistration></UserRegistration>
+      {/* <Ticker></Ticker> */}
     </div>
   );
 }
