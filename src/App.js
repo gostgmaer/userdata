@@ -5,6 +5,7 @@ import Header from './Components/ComponentsParts/Header';
 import Login from './Components/Blocks/Login';
 import Notify from './Utils/Notification/notify';
 import Counter from './Applications/Counter/Counter';
+import TempratureControl from './Applications/TempeturesControl/TempratureControl';
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       {/* <Registration></Registration> */}
       {/* <Login></Login> */}
       {/* <Notify></Notify> */}
-      <Counter></Counter>
+      {/* <Counter></Counter> */}
+      <TempratureControl></TempratureControl>
     </div>
   );
 }
