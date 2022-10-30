@@ -8,6 +8,7 @@ import Counter from './Applications/Counter/Counter';
 import TempratureControl from './Applications/TempeturesControl/TempratureControl';
 import SearchFilter from './Applications/SearchFilter/SearchFilter';
 import UserRegistration from './Applications/RegistrationPage/UserRegistration';
+import Ticker from './Applications/TimerTicker/Ticker';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       {/* <TempratureControl></TempratureControl> */}
       {/* <SearchFilter></SearchFilter> */}
       <UserRegistration></UserRegistration>
+      {/* <Ticker></Ticker> */}
     </div>
   );
 }

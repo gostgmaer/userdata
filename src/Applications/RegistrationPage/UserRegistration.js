@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { database } from "../../services/Firebase";
 import { ref, push, child, update } from "firebase/database";
+import Ticker from './../TimerTicker/Ticker';
 
 
 const date = new Date().toDateString();
@@ -50,10 +51,11 @@ function UserRegistration() {
       <div className=" col-12  m-auto">
         <div className=" m-2 rounded-3 card text-center">
           <div className="card-header bg-light">
-            User Registration Page With Post API
+            <div className=" d-flex col-12"> <span className=" col-6" >User Registration Page With Post API  </span> <span className=" text-center col-6"> <Ticker></Ticker></span></div> 
+          
           </div>
           <label className=" p-4">
-            Please provide Necessary Data for Continue Registration
+            Please provide Necessary Data for Continue Registration 
           </label>
           <div className="  col-8 m-auto p-4 mb-2 rounded-3 card text-center">
             <form className="d-block">
