@@ -4,6 +4,8 @@ import { useRef, useState, useEffect, useContext } from "react";
 import AuthContext from "../../Context/AuthProvider";
 import axios from "../../api/axios";
 import jwt_decode from "jwt-decode";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const LOGIN_URL = "/userauth/authservice/session";
 function Login() {
@@ -43,6 +45,16 @@ function Login() {
           withCredentials: true,
         }
       );
+      toast.success("It's as expected!",{
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",}
+        );
 
         response  = response["data"]
       const userData = jwt_decode(response["access_token"])
@@ -57,6 +69,16 @@ function Login() {
     } catch (error) {
       if (!error?.response) {
         SetErrmsg("Server Not Respond");
+        toast.error("Server Not Respond",{
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",}
+          );
       } else if (error.response?.status === 400) {
         SetErrmsg("Missing Username or Password");
       } else if (error.response?.status === 401) {
@@ -67,6 +89,18 @@ function Login() {
       errRef.current.focus();
     }
   };
+  let notify =(message,msgType)=>{
+    toast.msgType(`${message}`, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+  }
   return (
     <React.Fragment>
       {succcess ? (
@@ -138,6 +172,7 @@ function Login() {
           </form>
         </div>
       )}
+      <ToastContainer></ToastContainer>
     </React.Fragment>
   );
 }
