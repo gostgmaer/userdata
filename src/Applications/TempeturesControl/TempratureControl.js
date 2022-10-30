@@ -1,6 +1,6 @@
 import React, { useReducer, useState } from "react";
 import "./Styles.scss";
-const initialTemp = 20;
+const initialTemp = 10;
 let initialColor = "neutral";
 const reducer = (state, action) => {
   switch (action) {
@@ -8,8 +8,10 @@ const reducer = (state, action) => {
         state = state+1
       if (state < 15) {
         initialColor = "cold";
-      }else if (state>=25) {
+      }else if (state>24 ) {
         initialColor = "hot";
+      }else if (state<25 ) {
+        initialColor = "neutral";
       }
       return state
 
@@ -17,8 +19,10 @@ const reducer = (state, action) => {
         state = state-1
         if (state < 15) {
             initialColor = "cold";
-          }else if (state>=25) {
+          }else if (state>24 ) {
             initialColor = "hot";
+          }else if (state<25 ) {
+            initialColor = "neutral";
           }
       return state
 
