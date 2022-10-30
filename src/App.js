@@ -7,6 +7,7 @@ import Notify from './Utils/Notification/notify';
 import Counter from './Applications/Counter/Counter';
 import TempratureControl from './Applications/TempeturesControl/TempratureControl';
 import SearchFilter from './Applications/SearchFilter/SearchFilter';
+import UserRegistration from './Applications/RegistrationPage/UserRegistration';
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
       {/* <Notify></Notify> */}
       {/* <Counter></Counter> */}
       {/* <TempratureControl></TempratureControl> */}
-      <SearchFilter></SearchFilter>
+      {/* <SearchFilter></SearchFilter> */}
+      <UserRegistration></UserRegistration>
     </div>
   );
 }

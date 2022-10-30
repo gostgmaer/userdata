@@ -14,7 +14,7 @@ function SearchFilter() {
       <div className=" col-10  m-auto">
         <div className=" m-2 rounded-3 card text-center">
           <div className="card-header bg-light">
-            Temprature Control With Color
+            Static Table Data With Filter 
           </div>
           <div className="form-group  p-5">
             <label className=" pb-4">
