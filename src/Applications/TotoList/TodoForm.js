@@ -2,24 +2,43 @@ import React, { useEffect, useState } from "react";
 import { BiPlus, BiMinus } from "react-icons/bi";
 import { v4 as uuidv4 } from "uuid";
 
-function TodoForm({name, setName, city, setCity, toDos, setTodos}) {
+function TodoForm({
+  name,
+  setName,
+  city,
+  setCity,
+  toDos,
+  setTodos,
+  editTodo,
+  setEditTodo,
+}) {
   const setNameEvent = (event) => {
     setName(event.target.value);
-   
   };
   const setCityEvent = (event) => {
     setCity(event.target.value);
-  
   };
+//   const updateTodo = (name, city, id, complete) => {
+//     const newTodo = toDos.map((todo) => {
+//       todo.id === id ? { name, city, id, complete } : todo;
+//     });
+
+//     setTodos(newTodo);
+//     setEditTodo("");
+//   };
   const addTodoData = (e) => {
     e.preventDefault();
+    // if (!editTodo) {
+     
+    // } else {
+    //   updateTodo(name, city, editTodo.id, editTodo.complete);
+    // }
     setTodos([
-      ...toDos,
-      { id: uuidv4(), name: name, city: city, complete: false },
-    ]);
-    setName("");
-    setCity("");
-  
+        ...toDos,
+        { id: uuidv4(), name: name, city: city, complete: false },
+      ]);
+      setName("");
+      setCity("");
     // obj["name"]=name;
     // obj["city"]=city;
     // console.log(name,city);
@@ -52,7 +71,8 @@ function TodoForm({name, setName, city, setCity, toDos, setTodos}) {
                 <div className="mb-3  p-3 pb-0">
                   <select
                     className="form-select form-select-lg"
-                    name="selectCity" value={city}
+                    name="selectCity"
+                    value={city}
                     onChange={setCityEvent}
                     id="selectCity"
                   >

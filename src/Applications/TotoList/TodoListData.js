@@ -1,7 +1,25 @@
 /* eslint-disable array-callback-return */
 import React from "react";
-import { BiEdit, BiTrash,BiCheckSquare } from "react-icons/bi";
-const TodoListData = ({ todos, setTodos }) => {
+import { BiEdit, BiTrash, BiCheckSquare } from "react-icons/bi";
+const TodoListData = ({ todos, setTodos, setEditTodo }) => {
+  const handleDelete = ({ id }) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+  const handleComplete = (val) => {
+    setTodos(
+      todos.map((item) => {
+        if (item.id === val.id) {
+          return { ...item, complete: !item.complete };
+        }
+        return item;
+      })
+    );
+  };
+  const handleEdit = ({id})=>{
+    const findTodo = todos.find((todo)=>todo.id===id)
+    setEditTodo(findTodo)
+
+  }
   return (
     <div>
       <div className=" col-10  m-auto">
@@ -48,6 +66,7 @@ const TodoListData = ({ todos, setTodos }) => {
                           class="form-control"
                           name="tdataname"
                           id="tDataname"
+                          readonly
                         />
                       </td>
                       <td>
@@ -58,6 +77,7 @@ const TodoListData = ({ todos, setTodos }) => {
                           class="form-control"
                           name="tCity"
                           id="tCity"
+                          readonly={true}
                         />
                       </td>
                       <td>
@@ -66,20 +86,22 @@ const TodoListData = ({ todos, setTodos }) => {
                             type="button"
                             class="list-group-item list-group-item-action"
                             aria-current="true"
+                            onClick={() => handleEdit(val)}
                           >
                             <BiEdit></BiEdit>
                           </button>
                           <button
                             type="button"
+                            onClick={() => handleDelete(val)}
                             class="list-group-item list-group-item-action"
                           >
                             <BiTrash></BiTrash>
                           </button>
                           <button
                             type="button"
+                            onClick={() => handleComplete(val)}
                             class="list-group-item list-group-item-action"
                           >
-                            
                             <BiCheckSquare></BiCheckSquare>
                           </button>
                         </div>

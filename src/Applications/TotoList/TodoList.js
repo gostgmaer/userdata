@@ -7,6 +7,7 @@ function TodoList() {
   const [name, setName] = useState("");
   const [city, setCity] = useState("");
   const [todos, setTodos] = useState([]);
+  const [editTodo, setEditTodo] = useState(null);
   return (
     <div>
       <div className=" col-12  m-auto">
@@ -26,6 +27,8 @@ function TodoList() {
             city={city}
             toDos={todos}
             setTodos={setTodos}
+            // editTodo={editTodo}
+            // setEditTodo={setEditTodo}
            
           />
 
