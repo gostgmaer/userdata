@@ -12,6 +12,7 @@ import Quizapp from './Applications/QuizApp/Quizapp';
 import HeaderTwo from './Components/ComponentsParts/HeaderTwo';
 import TokenList from './Applications/SearchFilter/TokenList';
 import LoginPage from './Applications/LoginPage/Login';
+import TodoList from './Applications/TotoList/TodoList';
 
 function App() {
   return (
@@ -28,7 +29,8 @@ function App() {
       {/* <Ticker></Ticker> */}
       {/* <Quizapp></Quizapp> */}
       {/* <TokenList></TokenList> */}
-      <LoginPage></LoginPage>
+      {/* <LoginPage></LoginPage> */}
+      <TodoList></TodoList>
     </div>
   );
 }
