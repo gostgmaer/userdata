@@ -9,6 +9,7 @@ import TempratureControl from './Applications/TempeturesControl/TempratureContro
 import SearchFilter from './Applications/SearchFilter/SearchFilter';
 import UserRegistration from './Applications/RegistrationPage/UserRegistration';
 import Ticker from './Applications/TimerTicker/Ticker';
+import Quizapp from './Applications/QuizApp/Quizapp';
 
 function App() {
   return (
@@ -20,8 +21,9 @@ function App() {
       {/* <Counter></Counter> */}
       {/* <TempratureControl></TempratureControl> */}
       {/* <SearchFilter></SearchFilter> */}
-      <UserRegistration></UserRegistration>
+      {/* <UserRegistration></UserRegistration> */}
       {/* <Ticker></Ticker> */}
+      <Quizapp></Quizapp>
     </div>
   );
 }
