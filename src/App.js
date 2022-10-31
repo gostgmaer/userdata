@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import Registration from './Components/Blocks/Registration';
-// import Header from './Components/ComponentsParts/Headers/Header';
+import Header from './Components/ComponentsParts/Headers/Header';
 import Login from './Components/Blocks/Login';
 import Notify from './Utils/Notification/notify';
 import Counter from './Applications/Counter/Counter';
@@ -12,12 +11,13 @@ import Ticker from './Applications/TimerTicker/Ticker';
 import Quizapp from './Applications/QuizApp/Quizapp';
 import HeaderTwo from './Components/ComponentsParts/HeaderTwo';
 import TokenList from './Applications/SearchFilter/TokenList';
+import LoginPage from './Applications/LoginPage/Login';
 
 function App() {
   return (
     <div className="App">
-      {/* <Header></Header> */}
-      <HeaderTwo></HeaderTwo>
+      <Header></Header>
+      {/* <HeaderTwo></HeaderTwo> */}
       {/* <Registration></Registration> */}
       {/* <Login></Login> */}
       {/* <Notify></Notify> */}
@@ -27,7 +27,8 @@ function App() {
       {/* <UserRegistration></UserRegistration> */}
       {/* <Ticker></Ticker> */}
       {/* <Quizapp></Quizapp> */}
-      <TokenList></TokenList>
+      {/* <TokenList></TokenList> */}
+      <LoginPage></LoginPage>
     </div>
   );
 }

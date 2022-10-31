@@ -12,7 +12,6 @@ function TokenList() {
 
 
 
-
   useEffect(() => {
     axios
       .get(Token_URL)
@@ -64,7 +63,7 @@ function TokenList() {
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
-                        <th>Ip Address</th>
+                        <th>Total time</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -76,7 +75,7 @@ function TokenList() {
                             <td>{val.first_name}</td>
                             <td>{val.last_name}</td>
                             <td>{val.email}</td>
-                            <td>{val.ip_address}</td>
+                            <td>{val.Total_time}</td>
                           </tr>
                         );
                       })}
