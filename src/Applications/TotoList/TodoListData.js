@@ -1,6 +1,7 @@
 /* eslint-disable array-callback-return */
 import React from "react";
 import { BiEdit, BiTrash, BiCheckSquare } from "react-icons/bi";
+import { ToastContainer } from "react-toastify";
 const TodoListData = ({ todos, setTodos, setEditTodo }) => {
   const handleDelete = ({ id }) => {
     setTodos(todos.filter((todo) => todo.id !== id));
@@ -14,6 +15,7 @@ const TodoListData = ({ todos, setTodos, setEditTodo }) => {
         return item;
       })
     );
+   
   };
   const handleEdit = ({id})=>{
     const findTodo = todos.find((todo)=>todo.id===id)
@@ -29,13 +31,13 @@ const TodoListData = ({ todos, setTodos, setEditTodo }) => {
             <section>
               <div className="p-2">
                 {todos.map((todo) => {
-                  console.log(todo);
+                 
                   <li key={todo.id}>
                     <input
                       type="text"
                       value={todo.name}
                       onChange={(e) => e.preventDefault()}
-                      class="form-control"
+                      className="form-control"
                       name="listd"
                       id="listd"
                     />
@@ -55,6 +57,7 @@ const TodoListData = ({ todos, setTodos, setEditTodo }) => {
               </thead>
               <tbody>
                 {todos.map((val, key) => {
+                
                   return (
                     <tr key={key}>
                       <td>{val.id} </td>
@@ -63,10 +66,10 @@ const TodoListData = ({ todos, setTodos, setEditTodo }) => {
                           type="text"
                           value={val.name}
                           onChange={(e) => e.preventDefault()}
-                          class="form-control"
+                          className="form-control"
                           name="tdataname"
                           id="tDataname"
-                          readonly
+                          readOnly
                         />
                       </td>
                       <td>
@@ -74,17 +77,17 @@ const TodoListData = ({ todos, setTodos, setEditTodo }) => {
                           type="text"
                           value={val.city}
                           onChange={(e) => e.preventDefault()}
-                          class="form-control"
+                          className="form-control"
                           name="tCity"
                           id="tCity"
-                          readonly={true}
+                          readOnly
                         />
                       </td>
                       <td>
-                        <div class="list-group">
+                        <div className="list-group">
                           <button
                             type="button"
-                            class="list-group-item list-group-item-action"
+                            className="list-group-item list-group-item-action"
                             aria-current="true"
                             onClick={() => handleEdit(val)}
                           >
@@ -93,14 +96,14 @@ const TodoListData = ({ todos, setTodos, setEditTodo }) => {
                           <button
                             type="button"
                             onClick={() => handleDelete(val)}
-                            class="list-group-item list-group-item-action"
+                            className="list-group-item list-group-item-action"
                           >
                             <BiTrash></BiTrash>
                           </button>
                           <button
                             type="button"
                             onClick={() => handleComplete(val)}
-                            class="list-group-item list-group-item-action"
+                            className="list-group-item list-group-item-action"
                           >
                             <BiCheckSquare></BiCheckSquare>
                           </button>
@@ -114,6 +117,7 @@ const TodoListData = ({ todos, setTodos, setEditTodo }) => {
           </div>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { BiPlus, BiMinus } from "react-icons/bi";
 import { v4 as uuidv4 } from "uuid";
+import {notifySuccess, notifydefault, notifyerror, notifyinfo,notifywarning} from "../../Utils/Notification/notify";
+import { ToastContainer } from "react-toastify";
 
 function TodoForm({
   name,
@@ -28,22 +30,12 @@ function TodoForm({
 //   };
   const addTodoData = (e) => {
     e.preventDefault();
-    // if (!editTodo) {
-     
-    // } else {
-    //   updateTodo(name, city, editTodo.id, editTodo.complete);
-    // }
     setTodos([
         ...toDos,
         { id: uuidv4(), name: name, city: city, complete: false },
-      ]);
+      ],  notifyerror(<div> Title: {name} and City: {city} has added  </div>,2000));
       setName("");
-      setCity("");
-    // obj["name"]=name;
-    // obj["city"]=city;
-    // console.log(name,city);
-    // array.push(obj);
-    // console.log(array);
+      setCity("");  
   };
 
   return (
@@ -97,6 +89,7 @@ function TodoForm({
           </div>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import './App.css';
 import Registration from './Components/Blocks/Registration';
 import Header from './Components/ComponentsParts/Headers/Header';
 import Login from './Components/Blocks/Login';
-import Notify from './Utils/Notification/notify';
+
 import Counter from './Applications/Counter/Counter';
 import TempratureControl from './Applications/TempeturesControl/TempratureControl';
 import SearchFilter from './Applications/SearchFilter/SearchFilter';
@@ -28,9 +28,10 @@ function App() {
       {/* <UserRegistration></UserRegistration> */}
       {/* <Ticker></Ticker> */}
       {/* <Quizapp></Quizapp> */}
-      {/* <TokenList></TokenList> */}
+      <TokenList></TokenList>
       {/* <LoginPage></LoginPage> */}
-      <TodoList></TodoList>
+{/*       
+      <TodoList></TodoList> */}
     </div>
   );
 }
