@@ -60,7 +60,7 @@ function UserRegistration() {
           <div className="  col-8 m-auto p-4 mb-2 rounded-3 card text-center">
             <form className="d-block">
               <div className=" d-flex">
-                {" "}
+              
                 <div className="col">
                   <div className="mb-3 p-3 pb-0">
                     <input
