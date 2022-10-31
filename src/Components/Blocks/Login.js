@@ -45,17 +45,7 @@ function Login() {
           withCredentials: true,
         }
       );
-      toast.success("It's as expected!",{
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",}
-        );
-
+      
         response  = response["data"]
       const userData = jwt_decode(response["access_token"])
     //   console.log(userData);
