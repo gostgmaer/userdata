@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
+import {POST,PUT,PATCH,DELETE,GET  } from "../../services/network";
+
 import {
   notifySuccess,
   notifydefault,
@@ -8,7 +10,13 @@ import {
   notifywarning,
 } from "../../Utils/Notification/notify";
 import { ToastContainer } from "react-toastify";
-import { BiMailSend, BiPhone } from "react-icons/bi";
+import {
+  BiMailSend,
+  BiPhone,
+  BiPlus,
+  BiUser,
+  BiUserCheck,
+} from "react-icons/bi";
 
 function ContactForm({
   firstName,
@@ -18,30 +26,60 @@ function ContactForm({
   email,
   setEmail,
   phone,
-  setPhone,contactlist,setContactList
+  setPhone,
+  contactlist,
+  setContactList, editContact,
+  setEditContact,
 }) {
-  const submitData = (e) => {
+  const submitData = async(e) => {
     let body = {
       firstName: firstName,
       lastName: lastName,
       phone: phone,
       email: email,
     };
-   
+
     e.preventDefault();
     try {
+      if (
+        contactlist.findIndex((contactlist) => contactlist.email === email) ===
+        -1
+      ) {
+       try {
+        const data =   await POST (`contactsNew.JSON`,body)
+       } catch (error) {
+        console.log(error);
+        
+       }
+     
+
         setContactList([
-            ...contactlist,
-            { id: uuidv4(), firstName: firstName, lastName: lastName,phone:phone,email:email, complete: false },
-          ], );
-          notifySuccess(<div> Name: {firstName} {firstName} and Contact: <BiPhone></BiPhone> {phone}, <BiMailSend></BiMailSend> {email} has added  </div>,2000)
+          ...contactlist,
+          {
+           
+            firstName: firstName,
+            lastName: lastName,
+            phone: phone,
+            email: email,
+            complete: false,
+          },
+        ]);
+        notifySuccess(
+          <div>
+           Contact: <BiMailSend></BiMailSend> {email} Has Been Added
+          </div>,
+          2000
+        );
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setPhone("");
+      } else {
+        notifyerror(`Email: ${email} is already Present in the database`, 2000);
+      }
     } catch (error) {
-        notifyerror(error,2000)
+      notifyerror(error, 2000);
     }
-      setFirstName("");
-      setLastName(""); 
-      setEmail("");
-      setPhone(""); 
   };
   const firstnameRef = useRef();
 
@@ -74,9 +112,13 @@ function ContactForm({
               <form className="d-block">
                 <div className=" d-flex">
                   <div className="col">
-                    <div className="mb-3 p-3 pb-0">
+                    <div className="mb-3 p-3 pb-0 d-flex">
+                      <span className="input-group-text" id="addon-wrapping">
+                        <BiUser></BiUser>
+                      </span>{" "}
                       <input
                         value={firstName}
+                        
                         type="text"
                         ref={firstnameRef}
                         onChange={FirstnameChange}
@@ -87,7 +129,11 @@ function ContactForm({
                         placeholder="First Name"
                       />
                     </div>
-                    <div className="mb-3 p-3 pb-0">
+                    <div className="mb-3 p-3 pb-0 d-flex">
+                      {" "}
+                      <span className="input-group-text" id="addon-wrapping">
+                        <BiPhone></BiPhone>
+                      </span>
                       <input
                         type="text"
                         onChange={phoneChange}
@@ -101,7 +147,11 @@ function ContactForm({
                     </div>
                   </div>
                   <div className="col">
-                    <div className="mb-3 p-3 pb-0">
+                    <div className="mb-3 p-3 pb-0 d-flex">
+                      {" "}
+                      <span className="input-group-text" id="addon-wrapping">
+                        <BiUserCheck></BiUserCheck>
+                      </span>
                       <input
                         onChange={lastNameChange}
                         type="text"
@@ -113,7 +163,11 @@ function ContactForm({
                         placeholder="last Name"
                       />
                     </div>
-                    <div className="mb-3 p-3 pb-0">
+                    <div className="mb-3 p-3 pb-0 d-flex">
+                      {" "}
+                      <span className="input-group-text" id="addon-wrapping">
+                        <BiMailSend></BiMailSend>
+                      </span>
                       <input
                         onChange={emailChange}
                         type="email"
@@ -136,7 +190,7 @@ function ContactForm({
                         onClick={submitData}
                         className="btn btn-primary col-4"
                       >
-                        Register
+                        <BiPlus></BiPlus> Add Contact
                       </button>
                     </div>
                   </div>

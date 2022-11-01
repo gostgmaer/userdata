@@ -9,6 +9,7 @@ import {
 import { ToastContainer } from "react-toastify";
 import ContactForm from "./ContactForm";
 import Lists from "./Lists";
+import { database } from "../../services/Firebase";
 
 const date = new Date().toDateString();
 function ContactData() {
@@ -17,8 +18,12 @@ function ContactData() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [contactlist, setContactList] = useState([]);
+  const [searchData, SetSearchdata] = useState("");
+  const [editContact, setEditContact] = useState(null);
   const firstnameRef = useRef;
   useEffect(() => {}, []);
+   
+//   console.log(Domain);
   return (
     <div>
       <div className=" col-12  m-auto">
@@ -40,7 +45,8 @@ function ContactData() {
                 setPhone={setPhone}
                 firstnameRef={firstnameRef}
                 contactlist={contactlist}
-                setContactList={setContactList}
+                setContactList={setContactList}  editContact={editContact}
+                setEditContact={setEditContact}
               />
             </div>
           </div>
@@ -48,6 +54,14 @@ function ContactData() {
             <Lists
               contactlist={contactlist}
               setContactList={setContactList}
+              firstName={firstName}
+              setFirstName={setFirstname}
+              lastName={lastName}
+              setLastName={setLastName}
+              searchData={searchData}
+              SetSearchdata={SetSearchdata}
+              editContact={editContact}
+              setEditContact={setEditContact}
             ></Lists>
           </div>
           <div className="card-footer text-muted">{date}</div>
