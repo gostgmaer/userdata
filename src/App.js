@@ -2,7 +2,7 @@ import './App.css';
 import Registration from './Components/Blocks/Registration';
 import Header from './Components/ComponentsParts/Headers/Header';
 import Login from './Components/Blocks/Login';
-import Notify from './Utils/Notification/notify';
+
 import Counter from './Applications/Counter/Counter';
 import TempratureControl from './Applications/TempeturesControl/TempratureControl';
 import SearchFilter from './Applications/SearchFilter/SearchFilter';
@@ -13,6 +13,8 @@ import HeaderTwo from './Components/ComponentsParts/HeaderTwo';
 import TokenList from './Applications/SearchFilter/TokenList';
 import LoginPage from './Applications/LoginPage/Login';
 import TodoList from './Applications/TotoList/TodoList';
+import Calculator from './Applications/Calculator/Calculator';
+import ContactData from './Applications/ContactList/ContactData';
 
 function App() {
   return (
@@ -30,7 +32,10 @@ function App() {
       {/* <Quizapp></Quizapp> */}
       {/* <TokenList></TokenList> */}
       {/* <LoginPage></LoginPage> */}
-      <TodoList></TodoList>
+      
+      {/* <TodoList></TodoList> */}
+      {/* <Calculator></Calculator> */}
+      <ContactData></ContactData>
     </div>
   );
 }
