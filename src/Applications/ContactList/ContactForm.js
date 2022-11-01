@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { v4 as uuidv4 } from "uuid";
 import {
   notifySuccess,
   notifydefault,
@@ -7,8 +8,9 @@ import {
   notifywarning,
 } from "../../Utils/Notification/notify";
 import { ToastContainer } from "react-toastify";
+import { BiMailSend, BiPhone } from "react-icons/bi";
 
-const ContactForm = (
+function ContactForm({
   firstName,
   setFirstName,
   lastName,
@@ -16,18 +18,50 @@ const ContactForm = (
   email,
   setEmail,
   phone,
-  setPhone
-) => {
-  const submitData = (e) => {};
-  const firstnameRef = useRef();
-  useEffect(() => {
-    firstnameRef.current.focus();
-  });
-  const FirstnameChange = (event) => {
-    setFirstName(event.target.value);
-    console.log(firstName);
+  setPhone,contactlist,setContactList
+}) {
+  const submitData = (e) => {
+    let body = {
+      firstName: firstName,
+      lastName: lastName,
+      phone: phone,
+      email: email,
+    };
+   
+    e.preventDefault();
+    try {
+        setContactList([
+            ...contactlist,
+            { id: uuidv4(), firstName: firstName, lastName: lastName,phone:phone,email:email, complete: false },
+          ], );
+          notifySuccess(<div> Name: {firstName} {firstName} and Contact: <BiPhone></BiPhone> {phone}, <BiMailSend></BiMailSend> {email} has added  </div>,2000)
+    } catch (error) {
+        notifyerror(error,2000)
+    }
+      setFirstName("");
+      setLastName(""); 
+      setEmail("");
+      setPhone(""); 
   };
-  console.log(firstName);
+  const firstnameRef = useRef();
+
+  useEffect(() => {
+    // firstnameRef.current.focus();
+  });
+
+  const FirstnameChange = (e) => {
+    setFirstName(e.target.value);
+  };
+  const lastNameChange = (e) => {
+    setLastName(e.target.value);
+  };
+  const emailChange = (e) => {
+    setEmail(e.target.value);
+  };
+  const phoneChange = (e) => {
+    setPhone(e.target.value);
+  };
+
   return (
     <div>
       <div className=" col-8  m-auto">
@@ -56,7 +90,8 @@ const ContactForm = (
                     <div className="mb-3 p-3 pb-0">
                       <input
                         type="text"
-                        onChange={(e) => setPhone(e.target.value)}
+                        onChange={phoneChange}
+                        value={phone}
                         className="form-control"
                         name="phoneNumber"
                         id="PhoneNumber"
@@ -68,8 +103,9 @@ const ContactForm = (
                   <div className="col">
                     <div className="mb-3 p-3 pb-0">
                       <input
-                        onChange={(e) => setLastName(e.target.value)}
+                        onChange={lastNameChange}
                         type="text"
+                        value={lastName}
                         className="form-control"
                         name="lastName"
                         id="lastName"
@@ -79,8 +115,9 @@ const ContactForm = (
                     </div>
                     <div className="mb-3 p-3 pb-0">
                       <input
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={emailChange}
                         type="email"
+                        value={email}
                         className="form-control"
                         name="email"
                         id="email"
@@ -109,8 +146,9 @@ const ContactForm = (
           </div>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
-};
+}
 
 export default ContactForm;

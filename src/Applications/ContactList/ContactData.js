@@ -11,15 +11,14 @@ import ContactForm from "./ContactForm";
 import Lists from "./Lists";
 
 const date = new Date().toDateString();
-const ContactData = () => {
+function ContactData() {
   const [firstName, setFirstname] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [contactlist, setContactList] = useState([]);
   const firstnameRef = useRef;
-  useEffect(()=>{
-   
-  },[])
+  useEffect(() => {}, []);
   return (
     <div>
       <div className=" col-12  m-auto">
@@ -39,17 +38,23 @@ const ContactData = () => {
                 setEmail={setEmail}
                 phone={phone}
                 setPhone={setPhone}
+                firstnameRef={firstnameRef}
+                contactlist={contactlist}
+                setContactList={setContactList}
               />
             </div>
           </div>
           <div>
-            <Lists></Lists>
+            <Lists
+              contactlist={contactlist}
+              setContactList={setContactList}
+            ></Lists>
           </div>
           <div className="card-footer text-muted">{date}</div>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default ContactData;

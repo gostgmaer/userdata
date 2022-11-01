@@ -32,8 +32,8 @@ function App() {
       {/* <Quizapp></Quizapp> */}
       {/* <TokenList></TokenList> */}
       {/* <LoginPage></LoginPage> */}
-{/*       
-      <TodoList></TodoList> */}
+      
+      {/* <TodoList></TodoList> */}
       {/* <Calculator></Calculator> */}
       <ContactData></ContactData>
     </div>
