@@ -13,6 +13,7 @@ import HeaderTwo from './Components/ComponentsParts/HeaderTwo';
 import TokenList from './Applications/SearchFilter/TokenList';
 import LoginPage from './Applications/LoginPage/Login';
 import TodoList from './Applications/TotoList/TodoList';
+import Calculator from './Applications/Calculator/Calculator';
 
 function App() {
   return (
@@ -28,10 +29,11 @@ function App() {
       {/* <UserRegistration></UserRegistration> */}
       {/* <Ticker></Ticker> */}
       {/* <Quizapp></Quizapp> */}
-      <TokenList></TokenList>
+      {/* <TokenList></TokenList> */}
       {/* <LoginPage></LoginPage> */}
 {/*       
       <TodoList></TodoList> */}
+      <Calculator></Calculator>
     </div>
   );
 }
