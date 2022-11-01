@@ -25,7 +25,6 @@ function Calculator() {
   const inputRef = useRef(null)
 const setInputChange = (event) =>{
   setInput(event.target.value)
-  console.log(input);
 }
 useEffect(()=>{
   inputRef.current.focus()

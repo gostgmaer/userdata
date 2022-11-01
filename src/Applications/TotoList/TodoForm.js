@@ -83,7 +83,7 @@ function TodoForm({
                 type="button"
                 className="btn btn-primary"
               >
-                <BiPlus></BiPlus> Add{" "}
+                <BiPlus></BiPlus> Add
               </button>
             </div>
           </div>

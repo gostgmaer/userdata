@@ -14,6 +14,7 @@ import TokenList from './Applications/SearchFilter/TokenList';
 import LoginPage from './Applications/LoginPage/Login';
 import TodoList from './Applications/TotoList/TodoList';
 import Calculator from './Applications/Calculator/Calculator';
+import ContactData from './Applications/ContactList/ContactData';
 
 function App() {
   return (
@@ -33,7 +34,8 @@ function App() {
       {/* <LoginPage></LoginPage> */}
 {/*       
       <TodoList></TodoList> */}
-      <Calculator></Calculator>
+      {/* <Calculator></Calculator> */}
+      <ContactData></ContactData>
     </div>
   );
 }
