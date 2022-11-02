@@ -6,19 +6,33 @@ import {
     notifyinfo,
     notifywarning,
   } from "../../../Utils/Notification/notify";
-  import { ToastContainer } from "react-toastify";
 
 const Domain = process.env.REACT_APP_edamam_RECIPE_ONE_BASE_url
 const apiKEY = process.env.REACT_APP_edamam_RECIPE_ONE_apiKEY
 const appID = process.env.REACT_APP_edamam_RECIPE_ONE_app_id
 
-let msg = "Data Update Success"
+let msg = "Data Load SuccessFully"
+export const GET = async (endpoint,body,queryParam,urlParam) => {
+  let response;
+  try {
+    response = await axios.get(`${Domain}/${endpoint}?type=public&app_id=${appID}&app_key=${apiKEY}&${queryParam}`);
+    notifySuccess(msg,2000)
+    console.log(response.status);
+  } catch (e) {
+    // catch error
+    notifyerror(e.message,2000)
+    throw new Error(e.message)
+  }
 
+  // if success return value
+  return response?.data ? response?.data : null // or set initial value
+}
 export const POST = async (endPoint,body,queryParam,urlParam) => {
   let response;
   try {
-    response = await axios.post(`${Domain}/${endPoint}`, body);
-    notifySuccess(msg,2000)
+    response = await axios.post(`${Domain}/${endPoint}`,body);
+    console.log(msg);
+    notifySuccess(response,2000)
     
   } catch (e) {
     // catch error
@@ -29,20 +43,7 @@ export const POST = async (endPoint,body,queryParam,urlParam) => {
   // if success return value
   return response?.data ? response?.data : null // or set initial value
 }
-export const GET = async (endpoint,body,queryParam,urlParam) => {
-    let response;
-    try {
-      response = await axios.get(`${Domain}/${endpoint}?app_id=${appID}&app_key=${apiKEY}${queryParam}`);
-      notifySuccess('Data Loaded Successfully !!',2000)
-    } catch (e) {
-      // catch error
-      notifyerror(e.message,2000)
-      throw new Error(e.message)
-    }
-  
-    // if success return value
-    return response?.data ? response?.data : null // or set initial value
-  }
+
   export const PUT = async (endpoint,body) => {
     let response;
     try {
