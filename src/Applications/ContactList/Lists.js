@@ -1,5 +1,6 @@
 import React from "react";
 import { BiEdit, BiTrash, BiCheckSquare, BiSearch } from "react-icons/bi";
+import {POST,PUT,PATCH,DELETE,GET  } from "../../services/network";
 import {
   notifySuccess,
   notifydefault,
@@ -17,14 +18,16 @@ const Lists = ({
   editContact,
   setEditContact,
 }) => {
-  const handleDelete = ({ id }) => {
+  const handleDelete = async ({ id }) => {
     setContactList(contactlist.filter((data) => data.id !== id));
-    notifyinfo("Data has beeen deleted", 2000);
+     await DELETE(`Contacts/${id}.json`,'','');
   };
   const editContacthamdler = ({ id }) => {
-    setEditContact(id);
+  
     // console.log(editContact);
-    let selectContact = contactlist.find((contact) => contact.id === editContact);
+    let selectContact = contactlist.find((contact) => contact.id === id);
+    setEditContact(selectContact);
+    console.log(editContact);
 //   console.log(selectContact);
   };
   
@@ -65,7 +68,9 @@ const Lists = ({
                           <div className=" col-9 p-1 text-start ms-3">
                             <span>{val.firstName} </span>
 
-                            <span>{val.lastName}</span>
+                            <span>{val.lastName}</span> :
+                            <span>{val.email}</span>
+                           
                           </div>
                           <div className=" col-3">
                             <div className="list-group list-group-horizontal m-0">

@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useReducer, useRef, useState } from "react";
+import {POST,PUT,PATCH,DELETE,GET  } from "../../services/network";
 import {
   notifySuccess,
   notifydefault,
@@ -11,18 +12,35 @@ import ContactForm from "./ContactForm";
 import Lists from "./Lists";
 import { database } from "../../services/Firebase";
 
+
 const date = new Date().toDateString();
 function ContactData() {
+  const initialState=JSON.parse(localStorage.getItem("contactlist")) || [];
   const [firstName, setFirstname] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [contactlist, setContactList] = useState([]);
+  const [contactlist, setContactList] = useState(initialState);
   const [searchData, SetSearchdata] = useState("");
   const [editContact, setEditContact] = useState(null);
+
   const firstnameRef = useRef;
-  useEffect(() => {}, []);
+  useEffect( () => {
+    const getData = async()=>{
+      const data = await GET(`Contacts.json`);
+        let array=[]
+     Object.entries(data).forEach(([key,val]) => {
+        array.push({id:key,firstName:val.firstName,lastName:val.lastName,phone:val.phone,email:val.email})  
+      });
+      setContactList(array);
+    }
+    let data = getData()
+    
+   localStorage.setItem('contactlist',JSON.stringify(contactlist));
    
+  }, []);
+
+
 //   console.log(Domain);
   return (
     <div>

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
-import {POST,PUT,PATCH,DELETE,GET  } from "../../services/network";
+import { POST, PUT, PATCH, DELETE, GET } from "../../services/network";
 
 import {
   notifySuccess,
@@ -28,52 +28,63 @@ function ContactForm({
   phone,
   setPhone,
   contactlist,
-  setContactList, editContact,
+  setContactList,
+  editContact,
   setEditContact,
 }) {
-  const submitData = async(e) => {
+  const updateContact = async (id, firstName, lastName, phone, email) => {
+    const newContact = contactlist.map((contact) => 
+      contact.id === id ? { id, firstName, lastName, phone, email } : contact
+     
+    );
+    setContactList(newContact);
+   
+    // await PATCH(`Contacts.json`, body)
+    setEditContact("");
+  };
+  const submitData = async (e) => {
+    e.preventDefault();
     let body = {
       firstName: firstName,
       lastName: lastName,
       phone: phone,
       email: email,
+      id:uuidv4()
     };
 
-    e.preventDefault();
+    let data;
     try {
       if (
         contactlist.findIndex((contactlist) => contactlist.email === email) ===
         -1
       ) {
-       try {
-        const data =   await POST (`contactsNew.JSON`,body)
-       } catch (error) {
-        console.log(error);
+        data = await POST(`Contacts.json`, body);
+        if (!editContact) {
+          setContactList([
+            ...contactlist,
+            {
+              firstName: firstName,
+              lastName: lastName,
+              phone: phone,
+              email: email,
+              id:uuidv4(),
+            },
+          ]);
         
-       }
-     
-
-        setContactList([
-          ...contactlist,
-          {
-           
-            firstName: firstName,
-            lastName: lastName,
-            phone: phone,
-            email: email,
-            complete: false,
-          },
-        ]);
-        notifySuccess(
-          <div>
-           Contact: <BiMailSend></BiMailSend> {email} Has Been Added
-          </div>,
-          2000
-        );
-        setFirstName("");
-        setLastName("");
-        setEmail("");
-        setPhone("");
+         
+          notifySuccess(
+            <div>
+              Contact: <BiMailSend></BiMailSend> {email} Has Been Added
+            </div>,
+            2000
+          );
+          setFirstName("");
+          setLastName("");
+          setEmail("");
+          setPhone("");
+        } else {
+          updateContact(editContact.id, firstName, lastName, phone, email);
+        }
       } else {
         notifyerror(`Email: ${email} is already Present in the database`, 2000);
       }
@@ -84,8 +95,19 @@ function ContactForm({
   const firstnameRef = useRef();
 
   useEffect(() => {
-    // firstnameRef.current.focus();
-  });
+    if (editContact) {
+      setFirstName(editContact.firstName)
+      setLastName(editContact.lastName)
+      setPhone(editContact.phone)
+      setEmail(editContact.email)
+      
+    }else{
+      setFirstName('')
+      setLastName('')
+      setPhone('')
+      setEmail('')
+    }
+  },[setFirstName,setLastName,setPhone,setEmail,editContact]);
 
   const FirstnameChange = (e) => {
     setFirstName(e.target.value);
@@ -118,7 +140,6 @@ function ContactForm({
                       </span>{" "}
                       <input
                         value={firstName}
-                        
                         type="text"
                         ref={firstnameRef}
                         onChange={FirstnameChange}
