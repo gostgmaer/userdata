@@ -38,14 +38,8 @@ function ContactForm({
      
     );
     setContactList(newContact);
-    let body = {
-      firstName: firstName,
-      lastName: lastName,
-      phone: phone,
-      email: email,
-      id:id
-    };
-    await PATCH(`Contacts.json`, body)
+   
+    // await PATCH(`Contacts.json`, body)
     setEditContact("");
   };
   const submitData = async (e) => {

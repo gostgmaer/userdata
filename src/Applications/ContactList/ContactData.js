@@ -15,33 +15,28 @@ import { database } from "../../services/Firebase";
 
 const date = new Date().toDateString();
 function ContactData() {
+  const initialState=JSON.parse(localStorage.getItem("contactlist")) || [];
   const [firstName, setFirstname] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [contactlist, setContactList] = useState([]);
+  const [contactlist, setContactList] = useState(initialState);
   const [searchData, SetSearchdata] = useState("");
   const [editContact, setEditContact] = useState(null);
+
   const firstnameRef = useRef;
   useEffect( () => {
     const getData = async()=>{
-     
       const data = await GET(`Contacts.json`);
-        // console.log(data);
         let array=[]
      Object.entries(data).forEach(([key,val]) => {
-      
         array.push({id:key,firstName:val.firstName,lastName:val.lastName,phone:val.phone,email:val.email})  
       });
       setContactList(array);
-      
-        // console.log(data);
-        // return data
-      
     }
     let data = getData()
     
-   
+   localStorage.setItem('contactlist',JSON.stringify(contactlist));
    
   }, []);
 
