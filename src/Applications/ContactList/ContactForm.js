@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
-import {POST,PUT,PATCH,DELETE,GET  } from "../../services/network";
+import { POST, PUT, PATCH, DELETE, GET } from "../../services/network";
 
 import {
   notifySuccess,
@@ -28,10 +28,11 @@ function ContactForm({
   phone,
   setPhone,
   contactlist,
-  setContactList, editContact,
+  setContactList,
+  editContact,
   setEditContact,
 }) {
-  const submitData = async(e) => {
+  const submitData = async (e) => {
     let body = {
       firstName: firstName,
       lastName: lastName,
@@ -40,33 +41,31 @@ function ContactForm({
     };
 
     e.preventDefault();
+   let data
     try {
       if (
         contactlist.findIndex((contactlist) => contactlist.email === email) ===
         -1
       ) {
-       try {
-        const data =   await POST (`contactsNew.JSON`,body)
-       } catch (error) {
-        console.log(error);
-        
-       }
-     
+        try {
+           data = await POST(`contactsNew.json`, body);
+        } catch (error) {
+          console.log(error);
+        }
 
         setContactList([
           ...contactlist,
           {
-           
             firstName: firstName,
             lastName: lastName,
             phone: phone,
             email: email,
-            complete: false,
+            complete: false,id:data.name
           },
         ]);
         notifySuccess(
           <div>
-           Contact: <BiMailSend></BiMailSend> {email} Has Been Added
+            Contact: <BiMailSend></BiMailSend> {email} Has Been Added
           </div>,
           2000
         );
@@ -118,7 +117,6 @@ function ContactForm({
                       </span>{" "}
                       <input
                         value={firstName}
-                        
                         type="text"
                         ref={firstnameRef}
                         onChange={FirstnameChange}

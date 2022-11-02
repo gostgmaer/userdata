@@ -22,12 +22,13 @@ import {
   } from "../Utils/Notification/notify";
   import { ToastContainer } from "react-toastify";
 
-const Domain = database["app"]["options"]["databaseURL"];
-
+const Domain = "https://registration-b540d-default-rtdb.asia-southeast1.firebasedatabase.app";
+let msg = "Data Update Success"
 export const POST = async (endpoint,body) => {
   let response;
   try {
     response = await axios.post(`${Domain}/${endpoint}`, body);
+    notifySuccess(msg,2000)
     
   } catch (e) {
     // catch error
@@ -41,9 +42,11 @@ export const POST = async (endpoint,body) => {
 export const GET = async (endpoint,body) => {
     let response;
     try {
-      response = await axios.get(`${Domain}/${endpoint}`, body);
+      response = await axios.get(`${Domain}/${endpoint}`);
+      notifySuccess(msg,2000)
     } catch (e) {
       // catch error
+      notifyerror(e.message,2000)
       throw new Error(e.message)
     }
   
@@ -54,8 +57,10 @@ export const GET = async (endpoint,body) => {
     let response;
     try {
       response = await axios.put(`${Domain}/${endpoint}`, body);
+      notifySuccess(msg,2000)
     } catch (e) {
       // catch error
+      notifyerror(e.message,2000)
       throw new Error(e.message)
     }
   
@@ -66,20 +71,24 @@ export const GET = async (endpoint,body) => {
     let response;
     try {
       response = await axios.patch(`${Domain}/${endpoint}`, body);
+      notifySuccess(msg,2000)
     } catch (e) {
       // catch error
+      notifyerror(e.message,2000)
       throw new Error(e.message)
     }
   
     // if success return value
     return response?.data ? response?.data : null // or set initial value
   }
-  export const DELETE = async (endpoint,body) => {
+  export const DELETE = async (endpoint,body,id) => {
     let response;
     try {
-      response = await axios.delete(`${Domain}/${endpoint}`, body);
+      response = await axios.delete(`${Domain}/${endpoint}`, body,id);
+      notifySuccess(msg,2000)
     } catch (e) {
       // catch error
+      notifyerror(e.message,2000)
       throw new Error(e.message)
     }
   

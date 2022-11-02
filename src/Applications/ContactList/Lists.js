@@ -1,5 +1,6 @@
 import React from "react";
 import { BiEdit, BiTrash, BiCheckSquare, BiSearch } from "react-icons/bi";
+import {POST,PUT,PATCH,DELETE,GET  } from "../../services/network";
 import {
   notifySuccess,
   notifydefault,
@@ -17,9 +18,9 @@ const Lists = ({
   editContact,
   setEditContact,
 }) => {
-  const handleDelete = ({ id }) => {
+  const handleDelete = async ({ id }) => {
     setContactList(contactlist.filter((data) => data.id !== id));
-    notifyinfo("Data has beeen deleted", 2000);
+     await DELETE(`contactsNew/${id}.json`,'','');
   };
   const editContacthamdler = ({ id }) => {
     setEditContact(id);
