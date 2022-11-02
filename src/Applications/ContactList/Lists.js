@@ -23,9 +23,11 @@ const Lists = ({
      await DELETE(`Contacts/${id}.json`,'','');
   };
   const editContacthamdler = ({ id }) => {
-    setEditContact(id);
+  
     // console.log(editContact);
-    let selectContact = contactlist.find((contact) => contact.id === editContact);
+    let selectContact = contactlist.find((contact) => contact.id === id);
+    setEditContact(selectContact);
+    console.log(editContact);
 //   console.log(selectContact);
   };
   
