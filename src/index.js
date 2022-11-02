@@ -2,8 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import "./Assets/Styles.scss"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import $ from 'jquery';
+import Popper from 'popper.js';
 import reportWebVitals from './reportWebVitals';
+
 
 import { Auth0Provider } from '@auth0/auth0-react';
 

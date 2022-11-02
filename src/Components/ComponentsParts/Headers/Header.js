@@ -1,9 +1,10 @@
 import React from "react";
 import { FaReact } from 'react-icons/fa';
+import SimpleTime from "../../ComponentBlock/SimpleTime";
 
 function Header() {
   return (
-    <div>
+    <React.Fragment>
   <header className="p-3 bg-dark text-white">
     <div className="container">
       <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -20,16 +21,17 @@ function Header() {
           <li><a href="#" className="nav-link px-2 text-white">About</a></li>
         </ul>
 
-       
+        <div className=" text-center"> <SimpleTime></SimpleTime></div>
 
         <div className="text-end">
           <button type="button"  className="btn btn-outline-light me-3">Login</button>
           <button type="button" className="btn btn-warning">Sign-up</button>
+          
         </div>
       </div>
     </div>
   </header>
-    </div>
+    </React.Fragment>
   );
 }
 
