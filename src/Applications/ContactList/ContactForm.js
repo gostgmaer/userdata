@@ -48,7 +48,7 @@ function ContactForm({
         -1
       ) {
         try {
-           data = await POST(`contactsNew.json`, body);
+           data = await POST(`Contacts.json`, body);
         } catch (error) {
           console.log(error);
         }

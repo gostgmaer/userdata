@@ -20,7 +20,7 @@ const Lists = ({
 }) => {
   const handleDelete = async ({ id }) => {
     setContactList(contactlist.filter((data) => data.id !== id));
-     await DELETE(`contactsNew/${id}.json`,'','');
+     await DELETE(`Contacts/${id}.json`,'','');
   };
   const editContacthamdler = ({ id }) => {
     setEditContact(id);

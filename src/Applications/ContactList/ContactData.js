@@ -26,7 +26,7 @@ function ContactData() {
   useEffect( () => {
     const getData = async()=>{
      
-      const data = await GET(`contactsNew.json`);
+      const data = await GET(`Contacts.json`);
         // console.log(data);
         let array=[]
      Object.entries(data).forEach(([key,val]) => {
