@@ -12,7 +12,10 @@ const SimpleTime = () => {
     };
   });
 
-  return <React.Fragment>{time.toLocaleTimeString()}</React.Fragment>;
+  return <React.Fragment>
+    
+    <span className=' text-end col pe-5'> {time.toLocaleTimeString()}</span>
+   </React.Fragment>;
 };
 
 export default SimpleTime;
