@@ -68,7 +68,9 @@ const Lists = ({
                           <div className=" col-9 p-1 text-start ms-3">
                             <span>{val.firstName} </span>
 
-                            <span>{val.lastName}</span>
+                            <span>{val.lastName}</span> :
+                            <span>{val.email}</span>
+                           
                           </div>
                           <div className=" col-3">
                             <div className="list-group list-group-horizontal m-0">

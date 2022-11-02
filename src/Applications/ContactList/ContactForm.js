@@ -73,7 +73,7 @@ function ContactForm({
               lastName: lastName,
               phone: phone,
               email: email,
-              id:data.id,
+              id:uuidv4(),
             },
           ]);
         
@@ -89,7 +89,7 @@ function ContactForm({
           setEmail("");
           setPhone("");
         } else {
-          updateContact(data.id, firstName, lastName, phone, email);
+          updateContact(editContact.id, firstName, lastName, phone, email);
         }
       } else {
         notifyerror(`Email: ${email} is already Present in the database`, 2000);
