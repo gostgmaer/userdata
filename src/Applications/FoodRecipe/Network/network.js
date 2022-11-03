@@ -17,7 +17,7 @@ export const GET = async (endpoint,body,queryParam,urlParam) => {
   try {
     response = await axios.get(`${Domain}/${endpoint}?type=public&app_id=${appID}&app_key=${apiKEY}&${queryParam}`);
     notifySuccess(msg,2000)
-    console.log(response.status);
+    console.log(response);
   } catch (e) {
     // catch error
     notifyerror(e.message,2000)

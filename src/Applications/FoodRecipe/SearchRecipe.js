@@ -2,9 +2,11 @@ import React from "react";
 import { BiSearch } from "react-icons/bi";
 import { GET } from "./Network/network";
 
-const SearchRecipe = ({ searchData, SetSearchdata }) => {
+const SearchRecipe = ({ searchData, SetSearchdata, Recipe, setRecipe }) => {
     const handleSearch = async(e)=>{
-      await  GET('recipes/v2','',`q=${searchData}`,'')
+      const data = await GET("recipes/v2", "", `q=${searchData}`, "");
+      setRecipe(data["hits"]);
+      
     }
     const ClickSetSearchdata= (e)=>{
         SetSearchdata(e.target.value)
@@ -22,10 +24,10 @@ const SearchRecipe = ({ searchData, SetSearchdata }) => {
           aria-describedby="helpId"
           placeholder="Search with Name"
         />
-        <button onClick={handleSearch} type="button" className=" btn p-0 btn-secondary bg-light text-black col-1">
+        <button onClick={handleSearch} type="button" className=" btn p-0 btn-secondary bg-light text-black col-2">
          
 
-            <BiSearch></BiSearch>
+            <BiSearch></BiSearch> Search
           
         </button>
       </div>
