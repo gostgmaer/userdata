@@ -1,9 +1,8 @@
-import React from "react";
-import { ref } from "firebase/database";
+import React, { useState } from "react";
 import ViewMore from "./ViewMore";
 
 const ShowRecipe = (Recipe, setRecipe) => {
-  
+const [ingredients,setIngredients]=useState(false)
   return (
     <React.Fragment>
       <div className=" col-12  m-auto">
@@ -27,13 +26,15 @@ const ShowRecipe = (Recipe, setRecipe) => {
                     </p>
                    
                     <div class="d-flex flex-wrap">
-                      <button type="button" class=" m-1 btn btn-outline-info " aria-current="true">ingredients</button>
+                      {ingredients? <button type="button" class=" m-1 btn btn-outline-info" onClick={(e)=>setIngredients(false)} aria-current="true">Hide ingredients</button>:<button type="button" class=" m-1 btn btn-outline-info" onClick={(e)=>setIngredients(true)} aria-current="true">Show ingredients</button>}
                      
+                      
                     </div>
                     
                     
                   </div>
-                  <ViewMore Recipe={val} setRecipe={setRecipe} ></ViewMore>
+                 { ingredients? <ViewMore Recipe={val} setRecipe={setRecipe} ></ViewMore>:""}
+                
                 </div>
               );
             })}
