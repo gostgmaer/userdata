@@ -38,3 +38,14 @@ body{
      --bs-gutter-x: 0 !important; 
     
 }
+
+.viewMore{
+    .col-md-9{
+        .card-title{
+            font-size: 12px;
+        }
+        .card-text{
+            font-size: 10px;
+        }
+    }
+}

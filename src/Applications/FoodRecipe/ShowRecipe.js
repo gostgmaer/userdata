@@ -18,16 +18,20 @@ const ShowRecipe = (Recipe, setRecipe) => {
                 //     <p className="card-text">Text</p>
                 //   </div>
                 // </div>
-                <div class="card col-3" key={key}>
-                  <img src={val["recipe"]["image"]} class=" img-thumbnail" alt={val["recipe"]["image"]}  />
-                  <div class="card-body">
-                    <h5 class="card-title">{val["recipe"]["label"]}</h5>
-                    <p class="card-text">
-                     
+                <div className="card col-3" key={key}>
+                  <img src={val["recipe"]["image"]} className=" img-thumbnail" alt={val["recipe"]["label"]}  />
+                  <div className="card-body">
+                    <h5 className="card-title">{val["recipe"]["label"]}</h5>
+                    <p className="card-text">
+                      Total Calories = {val["recipe"].calories}
                     </p>
-                    <button class="btn btn-primary">
-                      View More
-                    </button>
+                   
+                    <div class="d-flex flex-wrap">
+                      <button type="button" class=" m-1 btn btn-outline-info " aria-current="true">ingredients</button>
+                     
+                    </div>
+                    
+                    
                   </div>
                   <ViewMore Recipe={val} setRecipe={setRecipe} ></ViewMore>
                 </div>
@@ -41,3 +45,5 @@ const ShowRecipe = (Recipe, setRecipe) => {
 };
 
 export default ShowRecipe;
+
+

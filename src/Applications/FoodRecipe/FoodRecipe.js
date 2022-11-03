@@ -7,7 +7,7 @@ import ShowRecipe from "./ShowRecipe";
 
 const FoodRecipe = () => {
   const [title] = useState("Food Recipe Application");
-  const [searchData, SetSearchdata] = useState("chi");
+  const [searchData, SetSearchdata] = useState("chicken");
   const [Recipe, setRecipe] = useState([]);
 
   useEffect(() => {
