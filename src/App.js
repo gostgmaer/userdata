@@ -17,6 +17,7 @@ import Calculator from './Applications/Calculator/Calculator';
 import ContactData from './Applications/ContactList/ContactData';
 import FoodRecipe from './Applications/FoodRecipe/FoodRecipe';
 import Shoppingcart from './Applications/ShoppingCart/Shoppingcart';
+import WeatherApp from './Applications/WeatherApp/WeatherApp';
 // import Modal from './Components/Modal/Modal';
 
 
@@ -42,7 +43,8 @@ function App() {
       {/* <ContactData></ContactData> */}
       {/* <FoodRecipe></FoodRecipe> */}
       {/* <Modal></Modal> */}
-      <Shoppingcart></Shoppingcart>
+      {/* <Shoppingcart></Shoppingcart> */}
+      <WeatherApp></WeatherApp>
     </div>
   );
 }
