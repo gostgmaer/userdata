@@ -16,6 +16,10 @@ import TodoList from './Applications/TotoList/TodoList';
 import Calculator from './Applications/Calculator/Calculator';
 import ContactData from './Applications/ContactList/ContactData';
 import FoodRecipe from './Applications/FoodRecipe/FoodRecipe';
+import Shoppingcart from './Applications/ShoppingCart/Shoppingcart';
+import WeatherApp from './Applications/WeatherApp/WeatherApp';
+// import Modal from './Components/Modal/Modal';
+
 
 function App() {
   return (
@@ -37,7 +41,10 @@ function App() {
       {/* <TodoList></TodoList> */}
       {/* <Calculator></Calculator> */}
       {/* <ContactData></ContactData> */}
-      <FoodRecipe></FoodRecipe>
+      {/* <FoodRecipe></FoodRecipe> */}
+      {/* <Modal></Modal> */}
+      {/* <Shoppingcart></Shoppingcart> */}
+      <WeatherApp></WeatherApp>
     </div>
   );
 }
