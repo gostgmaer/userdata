@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import SimpleHeading from "../../Components/ComponentBlock/SimpleHeading";
-import SimpleDate from "./../../Components/ComponentBlock/SimpleDate";
+import SimpleHeading from "../../../Components/ComponentBlock/SimpleHeading";
+import SimpleDate from "../../../Components/ComponentBlock/SimpleDate";
 import CallAPI from "./CallAPI";
 import FetchCurrentLocation from "./FetchCurrentLocation";
 import { GET } from "./Network/network";
@@ -16,27 +16,35 @@ const WeatherApp = () => {
   const [lat, setlat] = useState("null");
   const [loon, setloon] = useState("null");
   const [Status, setStatus] = useState("");
+
+  navigator.geolocation.getCurrentPosition((position) =>{
+    // console.log(position);
+    setlat(position.coords.latitude);
+    setloon(position.coords.longitude);})
+
   useEffect(() => {
+  
     const res = async () => {
         const data = await GET("weather", "", `lon=${loon}&lat=${lat}`,'','');
         setWeather(data)
       };
-      setTimeout(()=>res(),2000)
+      res()
   }, [lat, loon]);
+
 
   return (
     <div>
       <React.Fragment>
         <SimpleHeading title={title}></SimpleHeading>
         <div className=" p-1 rounded-0 card text-center">
-          <FetchCurrentLocation
+          {/* <FetchCurrentLocation
             lat={lat}
             setlat={setlat}
             loon={loon}
             setloon={setloon}
             Weather={Weather}
             setWeather={setWeather}
-          ></FetchCurrentLocation>
+          ></FetchCurrentLocation> */}
           <SearchLocation
             city={city}
             setcity={setcity}
