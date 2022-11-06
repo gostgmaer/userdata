@@ -22,7 +22,6 @@ export const GET = async (endpoint, body, queryParam, urlParam,header) => {
     try {
       response = await axios.get(`${baseURL}/${endpoint}?appid=${appID}&${queryParam}`);
       notifySuccess(msg,2000)
-      console.log(response);
     } catch (e) {
       // catch error
       notifyerror(e.message,2000)
