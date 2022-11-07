@@ -26,7 +26,6 @@ const WeatherCard = ({ Weather }) => {
   let weatherDesk = {};
   try {
     Weather.weather.forEach((element) => {
-     
       Weather["des"] = element;
     });
     let dess = Weather["des"]["main"];
@@ -48,8 +47,6 @@ const WeatherCard = ({ Weather }) => {
       }
     };
 
-  
-    
     return (
       <Fragment>
         <div className=" col-5  m-auto">
@@ -59,14 +56,11 @@ const WeatherCard = ({ Weather }) => {
                 <div className="d-flex col-12 text-center">
                   <div className=" col-6  text-start d-block">
                     <h6 className="flex-grow-1">
-                      
                       <GrMapLocation></GrMapLocation> {Weather.name}
                     </h6>
 
                     <p>
-                    
                       <span>
-                      
                         {Weather["coord"]["lat"]}, {Weather["coord"]["lon"]}
                       </span>
                     </p>
