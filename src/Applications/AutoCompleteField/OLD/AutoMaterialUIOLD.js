@@ -18,7 +18,7 @@ export const APIoptions = {
 
 export const APIurl = "https://wft-geo-db.p.rapidapi.com/v1/geo/";
 
-const AutoMaterialUI = () => {
+const AutoMaterialUIOLD = () => {
   const [open, setOpen] = React.useState(false);
   const [options, setOptions] = React.useState([]);
   const [apiData, setApiData] = useState([]);
@@ -156,4 +156,4 @@ const topFilms = [
   { title: "Interstellar", year: 2014 },
 ];
 
-export default AutoMaterialUI;
+export default AutoMaterialUIOLD;

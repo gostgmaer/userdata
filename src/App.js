@@ -19,8 +19,8 @@ import FoodRecipe from './Applications/FoodRecipe/FoodRecipe';
 import Shoppingcart from './Applications/ShoppingCart/Shoppingcart';
 // import WeatherApp from './Applications/WeatherApp/WeatherApp';
 import WeatherApplication from './Applications/WeatherApp//Components/WeatherApplication';
-import AutoComplete from './Applications/AutoCompleteField/AutoComplete';
-import AutoMaterialUI from './Applications/AutoCompleteField/AutoMaterialUI';
+import AutoComplete from "./Applications/AutoCompleteField/Autocomplete";
+
 // import Modal from './Components/Modal/Modal';
 
 
@@ -47,10 +47,12 @@ function App() {
       {/* <FoodRecipe></FoodRecipe> */}
       {/* <Modal></Modal> */}
       {/* <Shoppingcart></Shoppingcart> */}
-      {/* <WeatherApp></WeatherApp> */}
-      <WeatherApplication></WeatherApplication>
-      {/* <AutoComplete></AutoComplete> */}
-      {/* <AutoMaterialUI></AutoMaterialUI> */}
+     
+      {/* <WeatherApplication></WeatherApplication> */}
+      <AutoComplete>
+        
+      </AutoComplete>
+     
     </div>
   );
 }
