@@ -18,7 +18,6 @@ const WeatherApp = () => {
   const [Status, setStatus] = useState("");
 
   navigator.geolocation.getCurrentPosition((position) =>{
-    // console.log(position);
     setlat(position.coords.latitude);
     setloon(position.coords.longitude);})
 
