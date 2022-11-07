@@ -1,4 +1,5 @@
 // @ts-nocheck
+
 import React from "react";
 import { BiSearch } from "react-icons/bi";
 import data from "../../../Assets/Mock/Mockero/personalFile.json";
