@@ -21,6 +21,8 @@ import Shoppingcart from './Applications/ShoppingCart/Shoppingcart';
 import WeatherApplication from './Applications/WeatherApp//Components/WeatherApplication';
 import AutoComplete from "./Applications/AutoCompleteField/Simple/Autocomplete";
 import React from 'react';
+import AutoFetch from 'Applications/AutoCompleteField/react-bootstrap-typeahead-autocomplete/AutoFetch';
+import WeatherApp from 'Applications/WeatherApp/OLD/WeatherApp';
 
 
 
@@ -42,18 +44,16 @@ function App() {
       {/* <Quizapp></Quizapp> */}
       {/* <TokenList></TokenList> */}
       {/* <LoginPage></LoginPage> */}
-      
       {/* <TodoList></TodoList> */}
       {/* <Calculator></Calculator> */}
       {/* <ContactData></ContactData> */}
       {/* <FoodRecipe></FoodRecipe> */}
       {/* <Modal></Modal> */}
       {/* <Shoppingcart></Shoppingcart> */}
-     
       {/* <WeatherApplication></WeatherApplication> */}
-      <AutoComplete>
-        
-      </AutoComplete>
+      {/* <AutoComplete></AutoComplete> */}
+      {/* <AutoFetch></AutoFetch> */}
+      <WeatherApp></WeatherApp>
       
      
     </div>

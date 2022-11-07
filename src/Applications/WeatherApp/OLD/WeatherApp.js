@@ -13,49 +13,55 @@ const WeatherApp = () => {
   const [param, setParam] = useState({});
   const [Weather, setWeather] = useState({});
   const [city, setcity] = useState("Kolkata");
-  const [lat, setlat] = useState("null");
-  const [loon, setloon] = useState("null");
+  const [isLoading, setIsLoading] = useState(false);
+  const [options, setOptions] = useState([]);
+  const [lat, setlat] = useState(null);
+  const [lon, setlon] = useState(null);
   const [Status, setStatus] = useState("");
 
-  navigator.geolocation.getCurrentPosition((position) =>{
-    setlat(position.coords.latitude);
-    setloon(position.coords.longitude);})
-
   useEffect(() => {
-  
-    const res = async () => {
-        const data = await GET("weather", "", `lon=${loon}&lat=${lat}`,'','');
-        setWeather(data)
-      };
-      res()
-  }, [lat, loon]);
-
-
-  return (
-    <div>
-      <React.Fragment>
-        <SimpleHeading title={title}></SimpleHeading>
-        <div className=" p-1 rounded-0 card text-center">
-          {/* <FetchCurrentLocation
-            lat={lat}
-            setlat={setlat}
-            loon={loon}
-            setloon={setloon}
-            Weather={Weather}
-            setWeather={setWeather}
-          ></FetchCurrentLocation> */}
-          <SearchLocation
-            city={city}
-            setcity={setcity}
-            Weather={Weather}
-            setWeather={setWeather}
-          ></SearchLocation>
-          <ShowWeather Weather={Weather}></ShowWeather>
-        </div>
-        <SimpleDate></SimpleDate>
-      </React.Fragment>
-    </div>
-  );
+    // const res = async () => {
+    //   const data = await GET("weather", "", `lon=${loon}&lat=${lat}`, "", "");
+    //   setWeather(data);
+    // };
+    // res();
+  }, []);
+  console.log(Weather);
+  try {
+    return (
+      <div>
+        <React.Fragment>
+          <SimpleHeading title={title}></SimpleHeading>
+          <div className=" p-1 rounded-0 card text-center">
+            <FetchCurrentLocation
+              lat={lat}
+              setlat={setlat}
+              lon={lon}
+              setlon={setlon}
+            ></FetchCurrentLocation>
+            <SearchLocation
+              city={city}
+              setcity={setcity}
+              lat={lat}
+              setlat={setlat}
+              lon={lon}
+              setlon={setlon}
+              Weather={Weather}
+              setWeather={setWeather}
+            ></SearchLocation>
+            <CallAPI
+              city={city}
+              lat={lat}
+              lon={lon} 
+              setWeather={setWeather} options={options} setOptions={setOptions} isLoading ={isLoading} setIsLoading={setIsLoading}
+            ></CallAPI>
+            <ShowWeather Weather={Weather}></ShowWeather>
+          </div>
+          <SimpleDate></SimpleDate>
+        </React.Fragment>
+      </div>
+    );
+  } catch (error) {}
 };
 
 export default WeatherApp;
