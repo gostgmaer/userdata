@@ -19,9 +19,10 @@ import FoodRecipe from './Applications/FoodRecipe/FoodRecipe';
 import Shoppingcart from './Applications/ShoppingCart/Shoppingcart';
 // import WeatherApp from './Applications/WeatherApp/WeatherApp';
 import WeatherApplication from './Applications/WeatherApp//Components/WeatherApplication';
-import AutoComplete from "./Applications/AutoCompleteField/Autocomplete";
+import AutoComplete from "./Applications/AutoCompleteField/Simple/Autocomplete";
+import React from 'react';
 
-// import Modal from './Components/Modal/Modal';
+
 
 
 function App() {

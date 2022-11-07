@@ -1,8 +1,7 @@
 // @ts-nocheck
 import React from "react";
-import { Dropdown } from "react-bootstrap";
 import { BiSearch } from "react-icons/bi";
-import data from "../../Assets/Mock/Mockero/personalFile.json";
+import data from "../../../Assets/Mock/Mockero/personalFile.json";
 
 const Field = ({ input, setinput }) => {
   const handleSearch = (data) => {
