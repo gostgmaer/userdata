@@ -8,7 +8,7 @@ import SearchLocation from "./SearchLocation";
 import ShowWeather from "./ShowWeather";
 
 const WeatherApp = () => {
-  const [title] = useState("Simple Weather Application");
+  const [title] = useState("Weather Application With Auto Complete City");
 
   const [param, setParam] = useState({});
   const [Weather, setWeather] = useState({});
