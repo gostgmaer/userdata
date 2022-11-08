@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
-import { GET,GETCITY } from "./Network/network";
+import { GET } from "./Network/network";
 
-const CallAPI = ({ lat, lon, setWeather }) => {
-  // console.log(lat,loon);
+const CallAPI = ({ lat,
+  setlat,
+  lon,
+  setlon, setWeather }) => {
   useEffect(() => {
+    
     const currentWeatherres = async () => {
       const data = await GET("weather", "", `lon=${lon}&lat=${lat}`, "", "");
       setWeather(data);
@@ -11,8 +14,8 @@ const CallAPI = ({ lat, lon, setWeather }) => {
     if (lat && lon) {
       currentWeatherres();
     }
-   
-  }, [lat, lon, setWeather]);
+    
+  }, [lat, lon]);
 
 
 
