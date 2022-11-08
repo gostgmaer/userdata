@@ -1,36 +1,83 @@
-import React, { useEffect } from 'react'
-import { FaSearch } from "react-icons/fa";
-import { GET } from './Network/network';
+import axios from "axios";
+import React, { createRef, useState } from "react";
+import { Typeahead, AsyncTypeahead } from "react-bootstrap-typeahead";
+import CallAPI from "./CallAPI";
+import { GET, GETCITY } from "./Network/network";
+const SearchLocation = ({
+  lat,
+  setlat,
+  lon,
+  setlon,
+  city,
+  setcity,
+  setWeather,
+  Weather,
+}) => {
+  console.log(city, lat);
+  const [options, setOptions] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const handleSearch = async (query) => {
+    const res = await GETCITY(
+      "geo/cities",
+      "",
+      { namePrefix: query, minPopulation: "1000000" },
+      "",
+      ""
+    );
+    setOptions(res.data);
+    console.log(options);
+    
+  };
 
-
-const SearchLocation = ({city, setcity,Weather, setWeather}) => {
-  
-  const searchWeather = async()=>{
+  const filterBy = () => true;
+  const handleGetWeather = () => {
+    let data = ref.current.getInput();
+    setcity(data.value);
+    let newary = options.filter((obj) => obj.city === city);
+    let newObj
+    newary.forEach(element => {
+      console.log(element);
+      newObj=element
+      
+    });
+    if (newObj) {
+      setlat(newObj.latitude);
+      setlon(newObj.longitude);
+    }
    
-    // let data = await GET("weather", "", `q=${city}`,'','')
-    // setWeather(data)
-    // console.log(data);
-  }
-  const ChangeSearch = (e)=>{
-    setcity(e.target.value)
-  }
-  return (
-    <div>
-      <div className="row m-5">
-        <div className="col-md-5 mx-auto">
-            <div className="small fw-light">search input with icon</div>
-            <div className="input-group">
-                <input value={city} className="form-control border-end-0 border rounded-pill" type="search" onChange={ChangeSearch}  id="example-search-input"/>
-                <span className="input-group-append">
-                    <button className="btn btn-outline-secondary bg-white border-bottom-0 border rounded-pill ms-n5" onClick={searchWeather} type="button">
-                        <FaSearch></FaSearch>
-                    </button>
-                </span>
-            </div>
-        </div>
-    </div>
-    </div>
-  )
-}
+    return <CallAPI></CallAPI>
+  };
+  const ref = createRef();
 
-export default SearchLocation
+  return (
+    <React.Fragment>
+      <div className=" d-flex m-auto">
+        <AsyncTypeahead
+          filterBy={filterBy}
+          id="async-example"
+          isLoading={isLoading}
+          labelKey="name"
+          ref={ref}
+          minLength={3}
+          onSearch={handleSearch}
+          options={options}
+          placeholder="Search for a Github user..."
+          renderMenuItemChildren={(option) => (
+            <>
+              <span>{option.name}</span>
+            </>
+          )}
+        />
+        <button
+          type="button"
+          onClick={handleGetWeather}
+          className="btn btn-primary"
+        >
+          Button
+        </button>
+      </div>
+    </React.Fragment>
+  );
+};
+
+export default SearchLocation;

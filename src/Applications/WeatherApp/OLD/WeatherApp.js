@@ -8,11 +8,11 @@ import SearchLocation from "./SearchLocation";
 import ShowWeather from "./ShowWeather";
 
 const WeatherApp = () => {
-  const [title] = useState("Simple Weather Application");
+  const [title] = useState("Weather Application With Auto Complete City");
 
   const [param, setParam] = useState({});
   const [Weather, setWeather] = useState({});
-  const [city, setcity] = useState("Kolkata");
+  const [city, setcity] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [options, setOptions] = useState([]);
   const [lat, setlat] = useState(null);
@@ -40,20 +40,28 @@ const WeatherApp = () => {
               setlon={setlon}
             ></FetchCurrentLocation>
             <SearchLocation
-              city={city}
-              setcity={setcity}
               lat={lat}
               setlat={setlat}
               lon={lon}
               setlon={setlon}
+              city={city}
+              setcity={setcity}
               Weather={Weather}
               setWeather={setWeather}
+              options={options}
+              setOptions={setOptions}
+              isLoading={isLoading}
+              setIsLoading={setIsLoading}
             ></SearchLocation>
             <CallAPI
               city={city}
               lat={lat}
-              lon={lon} 
-              setWeather={setWeather} options={options} setOptions={setOptions} isLoading ={isLoading} setIsLoading={setIsLoading}
+              lon={lon}
+              setWeather={setWeather}
+              options={options}
+              setOptions={setOptions}
+              isLoading={isLoading}
+              setIsLoading={setIsLoading}
             ></CallAPI>
             <ShowWeather Weather={Weather}></ShowWeather>
           </div>

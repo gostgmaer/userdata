@@ -1,32 +1,29 @@
-import './App.css';
-import Registration from './Components/Blocks/Registration';
-import Header from './Components/ComponentsParts/Headers/Header';
-import Login from './Components/Blocks/Login';
+import "./App.css";
+import Registration from "./Components/Blocks/Registration";
+import Header from "./Components/ComponentsParts/Headers/Header";
+import Login from "./Components/Blocks/Login";
 
-import Counter from './Applications/Counter/Counter';
-import TempratureControl from './Applications/TempeturesControl/TempratureControl';
-import SearchFilter from './Applications/SearchFilter/SearchFilter';
-import UserRegistration from './Applications/RegistrationPage/UserRegistration';
-import Ticker from './Applications/TimerTicker/Ticker';
-import Quizapp from './Applications/QuizApp/Quizapp';
-import HeaderTwo from './Components/ComponentsParts/HeaderTwo';
-import TokenList from './Applications/SearchFilter/TokenList';
-import LoginPage from './Applications/LoginPage/Login';
-import TodoList from './Applications/TotoList/TodoList';
-import Calculator from './Applications/Calculator/Calculator';
-import ContactData from './Applications/ContactList/ContactData';
-import FoodRecipe from './Applications/FoodRecipe/FoodRecipe';
-import Shoppingcart from './Applications/ShoppingCart/Shoppingcart';
+import Counter from "./Applications/Counter/Counter";
+import TempratureControl from "./Applications/TempeturesControl/TempratureControl";
+import SearchFilter from "./Applications/SearchFilter/SearchFilter";
+import UserRegistration from "./Applications/RegistrationPage/UserRegistration";
+import Ticker from "./Applications/TimerTicker/Ticker";
+import Quizapp from "./Applications/QuizApp/Quizapp";
+import HeaderTwo from "./Components/ComponentsParts/HeaderTwo";
+import TokenList from "./Applications/SearchFilter/TokenList";
+import LoginPage from "./Applications/LoginPage/Login";
+import TodoList from "./Applications/TotoList/TodoList";
+import Calculator from "./Applications/Calculator/Calculator";
+import ContactData from "./Applications/ContactList/ContactData";
+import FoodRecipe from "./Applications/FoodRecipe/FoodRecipe";
+import Shoppingcart from "./Applications/ShoppingCart/Shoppingcart";
 // import WeatherApp from './Applications/WeatherApp/WeatherApp';
-import WeatherApplication from './Applications/WeatherApp//Components/WeatherApplication';
+import WeatherApplication from "./Applications/WeatherApp//Components/WeatherApplication";
 import AutoComplete from "./Applications/AutoCompleteField/Simple/Autocomplete";
-import React from 'react';
-import AutoFetch from 'Applications/AutoCompleteField/react-bootstrap-typeahead-autocomplete/AutoFetch';
-import WeatherApp from 'Applications/WeatherApp/OLD/WeatherApp';
-
-
-
-
+import React from "react";
+import AutoFetch from "Applications/AutoCompleteField/react-bootstrap-typeahead-autocomplete/AutoFetch";
+import WeatherApp from "Applications/WeatherApp/OLD/WeatherApp";
+import Quotes from "Applications/RandomQuote/Quotes";
 
 function App() {
   return (
@@ -53,9 +50,8 @@ function App() {
       {/* <WeatherApplication></WeatherApplication> */}
       {/* <AutoComplete></AutoComplete> */}
       {/* <AutoFetch></AutoFetch> */}
-      <WeatherApp></WeatherApp>
-      
-     
+      {/* <WeatherApp></WeatherApp> */}
+      <Quotes></Quotes>
     </div>
   );
 }
