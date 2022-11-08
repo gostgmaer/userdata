@@ -20,13 +20,7 @@ const WeatherApp = () => {
   const [Status, setStatus] = useState("");
 
   useEffect(() => {
-    // const res = async () => {
-    //   const data = await GET("weather", "", `lon=${loon}&lat=${lat}`, "", "");
-    //   setWeather(data);
-    // };
-    // res();
   }, []);
-  console.log(Weather);
   try {
     return (
       <div>

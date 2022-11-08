@@ -13,7 +13,6 @@ const SearchLocation = ({
   setWeather,
   Weather,
 }) => {
-  console.log(city, lat);
   const [options, setOptions] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const handleSearch = async (query) => {
@@ -25,8 +24,6 @@ const SearchLocation = ({
       ""
     );
     setOptions(res.data);
-    console.log(options);
-    
   };
 
   const filterBy = () => true;
@@ -34,18 +31,14 @@ const SearchLocation = ({
     let data = ref.current.getInput();
     setcity(data.value);
     let newary = options.filter((obj) => obj.city === city);
-    let newObj
-    newary.forEach(element => {
-      console.log(element);
-      newObj=element
-      
+    let newObj;
+    newary.forEach((element) => {
+      newObj = element;
     });
     if (newObj) {
       setlat(newObj.latitude);
       setlon(newObj.longitude);
     }
-   
-    return <CallAPI></CallAPI>
   };
   const ref = createRef();
 
