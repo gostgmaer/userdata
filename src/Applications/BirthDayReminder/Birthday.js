@@ -11,7 +11,7 @@ const Birthday = ({ setTitle }) => {
   }, [setTitle]);
 
   return <React.Fragment>
-    
+    <List></List>
   </React.Fragment>;
 };
 
