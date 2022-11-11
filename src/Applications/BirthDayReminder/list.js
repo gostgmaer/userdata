@@ -36,25 +36,25 @@ const List = () => {
   try {
     return (
       <div className=" m-auto col-5">
-        <div class="card border-primary ">
-          <div class="card-body">
-            <h4 class="card-title">{arrray.length} Birthday Today</h4>
+        <div className="card border-primary ">
+          <div className="card-body">
+            <h4 className="card-title">{arrray.length} Birthday Today</h4>
             <ul className=" list-group">
               {arrray.map((data) => {
                 return (
                   <li className="list-group-item d-flex" key={data.id}>
                     <img
-                      class=""
+                      className=""
                       width={50}
                       height={50}
                       src={data.image}
                       alt={data.first_name}
                     />
                     <div>
-                      <p class="card-text ms-2">
+                      <p className="card-text ms-2">
                         {data.first_name} {data.last_name}
                       </p>
-                      <p class="card-text ms-2">
+                      <p className="card-text ms-2">
                         {moment(today).format("YYYY") -
                           moment(data.dbo).format("YYYY")}{" "}
                         Years Old
@@ -68,7 +68,7 @@ const List = () => {
           <div className=" card-footer">
             <button
               type="button"
-              class="btn btn-primary"
+              className="btn btn-primary"
               onClick={clearAllHandle}
             >
               Clear All
