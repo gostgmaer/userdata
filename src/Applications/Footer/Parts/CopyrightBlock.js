@@ -4,40 +4,40 @@ import { BiCopy, BiCopyright } from "react-icons/bi";
 const CopyrightBlock = ({ Year }) => {
   return (
     <React.Fragment>
-      <div class="d-flex col-12 px-5 ps-5 justify-content-between border-top border-secondary ">
+      <div className="d-flex  mx-5 ms-5 justify-content-between border-top border-secondary ">
         <p className=" text-start col-3 p-0 mt-3">
           <BiCopyright></BiCopyright> {Year} Company. All rights reserved.
         </p>
-        <ul class="nav mt-2 col-6 justify-content-center">
-          <li class="nav-item">
-            <a href="#" class="nav-link px-2 text-muted">
-              Home
+        <ul className="nav mt-2 col-6 justify-content-center">
+          <li className="nav-item">
+            <a href="#" className="nav-link px-2 text-muted">
+              Terms and Condition
             </a>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link px-2 text-muted">
-              Features
+          <li className="nav-item">
+            <a href="#" className="nav-link px-2 text-muted">
+              Privacy Policy
             </a>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link px-2 text-muted">
-              Pricing
+          <li className="nav-item">
+            <a href="#" className="nav-link px-2 text-muted">
+              Security
             </a>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link px-2 text-muted">
-              FAQs
+          <li className="nav-item">
+            <a href="#" className="nav-link px-2 text-muted">
+              Sitemap
             </a>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link px-2 text-muted">
-              About
+          <li className="nav-item">
+            <a href="#" className="nav-link px-2 text-muted">
+              Pages
             </a>
           </li>
         </ul>
-        <div class=" col-3 text-end mt-3">
+        <div className=" col-3 text-end mt-3">
           <select
-            class=" bg-black border-0 text-light"
+            className=" bg-black border-0 text-light"
             name="language-select"
             id="language-select"
           >
