@@ -4,34 +4,34 @@ import { BiCopy, BiCopyright } from "react-icons/bi";
 const CopyrightBlock = ({ Year }) => {
   return (
     <React.Fragment>
-      <div class="d-flex col-12 px-5 ps-5 justify-content-between border-top border-secondary ">
+      <div class="d-flex  mx-5 ms-5 justify-content-between border-top border-secondary ">
         <p className=" text-start col-3 p-0 mt-3">
           <BiCopyright></BiCopyright> {Year} Company. All rights reserved.
         </p>
         <ul class="nav mt-2 col-6 justify-content-center">
           <li class="nav-item">
             <a href="#" class="nav-link px-2 text-muted">
-              Home
+              Terms and Condition
             </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link px-2 text-muted">
-              Features
+              Privacy Policy
             </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link px-2 text-muted">
-              Pricing
+              Security
             </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link px-2 text-muted">
-              FAQs
+              Sitemap
             </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link px-2 text-muted">
-              About
+              Pages
             </a>
           </li>
         </ul>

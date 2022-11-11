@@ -6,14 +6,14 @@ import Birthday from "Applications/BirthDayReminder/Birthday";
 const Skeliton = () => {
   const [title,setTitle]=useState("")
   return (
-    <React.Fragment>
+    <content>
       <SimpleHeading title={title}></SimpleHeading>
       <div className=" p-1 rounded-0 card text-center">
         <Birthday setTitle={setTitle} ></Birthday>
       </div>
 
       <SimpleDate></SimpleDate>
-    </React.Fragment>
+    </content>
   );
 };
 
