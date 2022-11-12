@@ -1,13 +1,15 @@
 import React, { useEffect } from "react";
-import Data from "./Data";
+
 import moment from "moment/moment";
 
-const List = () => {
+const List = ({DataRes,setDataRes}) => {
   const today = new Date();
   // Data.forEach((element) => {
   //   let date = moment(element.dbo).format("MM/DD");
   //   console.log(date);
   // });
+
+
   let arrray;
   try {
     useEffect(() => {
@@ -16,7 +18,7 @@ const List = () => {
     }, [arrray]);
 
  
-    arrray = Data.filter(
+    arrray = DataRes.filter(
       (element) =>
         moment(element.dbo).format("MM/DD") === moment(today).format("MM/DD")
     );
@@ -25,8 +27,8 @@ const List = () => {
     
   }
   const clearAllHandle = () => {
-    arrray.length = 0;
-    console.log(arrray);
+    setDataRes([])
+    // console.log(arrray);
 
    
   };
