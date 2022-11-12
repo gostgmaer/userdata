@@ -11,6 +11,10 @@ const HotelListing = ({setTitle}) => {
         setTitle("Hotel Listing Data")
     
     }, []);
+    if (Hotels.v) {
+        console.log(Hotels);
+    }
+ 
   return (
     <React.Fragment>
         <DataCard Hotels={Hotels}  ></DataCard>
