@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import APIcall, { data, param } from "./APIcall";
 import Card from "./Card";
 import SearchForm from "./SearchForm";
@@ -6,7 +6,9 @@ import SearchForm from "./SearchForm";
 const ImageGallery = ({ setTitle }) => {
   const [queryData, setqueryData] = useState("house");
   const [img, setimg] = useState([]);
-  setTitle("Stock Image Gallery");
+  useEffect(() => {
+    setTitle("Birthday Reminder");
+  }, [setTitle]);
  
   return (
     <div>
