@@ -5,6 +5,7 @@ import Birthday from "Applications/BirthDayReminder/Birthday";
 import ImageGallery from "Applications/ImageGallery/ImageGallery";
 import Review from "Applications/Testomonial/Review";
 import HotelListing from "Applications/HotelListing/HotelListing";
+import Tours from "Applications/Tours/Tours";
 
 const Skeliton = () => {
   const [title,setTitle]=useState("")
@@ -16,7 +17,8 @@ const Skeliton = () => {
         {/* <Birthday setTitle={setTitle} ></Birthday> */}
          {/* <ImageGallery setTitle={setTitle} ></ImageGallery> */}
          {/* <Review setTitle={setTitle} ></Review> */}
-         <HotelListing setTitle={setTitle} ></HotelListing>
+         {/* <HotelListing setTitle={setTitle} ></HotelListing> */}
+         <Tours setTitle={setTitle} ></Tours>
         
       </div>
 
