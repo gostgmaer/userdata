@@ -12,7 +12,7 @@ const Skeliton = () => {
       
       <SimpleHeading title={title}></SimpleHeading>
       <div className=" p-1 rounded-0 card text-center">
-        <Birthday setTitle={setTitle} ></Birthday>
+        {/* <Birthday setTitle={setTitle} ></Birthday> */}
          {/* <ImageGallery setTitle={setTitle} ></ImageGallery> */}
          <Review setTitle={setTitle} ></Review>
         

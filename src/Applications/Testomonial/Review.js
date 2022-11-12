@@ -9,7 +9,7 @@ const Review = ({ setTitle }) => {
     if (count===0) {
             setcount(1)
     }
-    setTitle("Review");
+    setTitle("Review Screen");
   });
   return (
     <div>
