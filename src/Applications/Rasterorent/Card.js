@@ -19,11 +19,11 @@ const Card = ({
         <p class="card-text">
           {readMore ? text : `${text.substring(0, 140)}.....`}
           {readMore ? (
-            <span onClick={(e) => setreadMore(false)} className=" fw-bold btn">
+            <span onClick={(e) => setreadMore(false)} className=" fw-bold btn text-warning">
               Read less
             </span>
           ) : (
-            <span className="fw-bold btn" onClick={(e) => setreadMore(true)}>
+            <span className="fw-bold text-primary btn" onClick={(e) => setreadMore(true)}>
               read More
             </span>
           )}
