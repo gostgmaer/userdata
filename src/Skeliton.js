@@ -6,6 +6,9 @@ import ImageGallery from "Applications/ImageGallery/ImageGallery";
 import Review from "Applications/Testomonial/Review";
 import HotelListing from "Applications/HotelListing/HotelListing";
 import Tours from "Applications/Tours/Tours";
+import Accordian from "Applications/Accordian/NEW/Accordian";
+import FoodList from "Applications/Rasterorent/FoodList";
+
 
 const Skeliton = () => {
   const [title,setTitle]=useState("")
@@ -18,7 +21,10 @@ const Skeliton = () => {
          {/* <ImageGallery setTitle={setTitle} ></ImageGallery> */}
          {/* <Review setTitle={setTitle} ></Review> */}
          {/* <HotelListing setTitle={setTitle} ></HotelListing> */}
-         <Tours setTitle={setTitle} ></Tours>
+          {/* <Tours setTitle={setTitle} ></Tours> */}
+         {/* <Accordian setTitle={setTitle} ></Accordian> */}
+         {/* <Accordian setTitle={setTitle}></Accordian> */}
+         <FoodList setTitle={setTitle} ></FoodList>
         
       </div>
 
