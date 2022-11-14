@@ -8,6 +8,7 @@ import HotelListing from "Applications/HotelListing/HotelListing";
 import Tours from "Applications/Tours/Tours";
 import Accordian from "Applications/Accordian/NEW/Accordian";
 import FoodList from "Applications/Rasterorent/FoodList";
+import Tabs from "Applications/ReactTabs/Tabs";
 
 
 const Skeliton = () => {
@@ -24,7 +25,8 @@ const Skeliton = () => {
           {/* <Tours setTitle={setTitle} ></Tours> */}
          {/* <Accordian setTitle={setTitle} ></Accordian> */}
          {/* <Accordian setTitle={setTitle}></Accordian> */}
-         <FoodList setTitle={setTitle} ></FoodList>
+         {/* <FoodList setTitle={setTitle} ></FoodList> */}
+         <Tabs setTitle={setTitle} ></Tabs>
         
       </div>
 
