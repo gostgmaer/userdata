@@ -12,6 +12,7 @@ import Tabs from "Applications/ReactTabs/Tabs";
 import Modal from "Modal";
 import Slider from "Applications/Slider/Slider";
 import Loremiposm from "Applications/LoremIpsom/Loremiposm";
+import ColorGenerator from "Applications/ColorGenerator.js/ColorGenerator";
 
 
 
@@ -33,7 +34,8 @@ const Skeliton = () => {
          {/* <Modal></Modal> */}
          {/* <Tabs setTitle={setTitle} ></Tabs> */}
          {/* <Slider setTtitle={setTitle} ></Slider> */}
-         <Loremiposm setTitle={setTitle} ></Loremiposm>
+         {/* <Loremiposm setTitle={setTitle} ></Loremiposm> */}
+         <ColorGenerator setTitle={setTitle}></ColorGenerator>
          
         
         

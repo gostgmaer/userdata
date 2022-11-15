@@ -5,7 +5,7 @@ const SimpleHeading = ({title}) => {
   return (
     <React.Fragment>
     <div className="rounded-0 card  text-center">
-      <div className="card-header bg-light">{title}</div>
+      <div className="card-header bg-light fw-bold">{title}</div>
     </div>
 
     <ToastContainer></ToastContainer>
