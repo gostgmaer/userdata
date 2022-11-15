@@ -10,6 +10,7 @@ import Accordian from "Applications/Accordian/NEW/Accordian";
 import FoodList from "Applications/Rasterorent/FoodList";
 import Tabs from "Applications/ReactTabs/Tabs";
 import Modal from "Modal";
+import Slider from "Applications/Slider/Slider";
 
 
 
@@ -28,8 +29,9 @@ const Skeliton = () => {
          {/* <Accordian setTitle={setTitle} ></Accordian> */}
          {/* <Accordian setTitle={setTitle}></Accordian> */}
          {/* <FoodList setTitle={setTitle} ></FoodList> */}
-         <Modal></Modal>
+         {/* <Modal></Modal> */}
          {/* <Tabs setTitle={setTitle} ></Tabs> */}
+         <Slider setTtitle={setTitle} ></Slider>
          
         
         
