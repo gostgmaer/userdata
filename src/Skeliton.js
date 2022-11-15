@@ -11,6 +11,7 @@ import FoodList from "Applications/Rasterorent/FoodList";
 import Tabs from "Applications/ReactTabs/Tabs";
 import Modal from "Modal";
 import Slider from "Applications/Slider/Slider";
+import Loremiposm from "Applications/LoremIpsom/Loremiposm";
 
 
 
@@ -31,7 +32,8 @@ const Skeliton = () => {
          {/* <FoodList setTitle={setTitle} ></FoodList> */}
          {/* <Modal></Modal> */}
          {/* <Tabs setTitle={setTitle} ></Tabs> */}
-         <Slider setTtitle={setTitle} ></Slider>
+         {/* <Slider setTtitle={setTitle} ></Slider> */}
+         <Loremiposm setTitle={setTitle} ></Loremiposm>
          
         
         
