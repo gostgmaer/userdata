@@ -13,6 +13,7 @@ import Modal from "Modal";
 import Slider from "Applications/Slider/Slider";
 import Loremiposm from "Applications/LoremIpsom/Loremiposm";
 import ColorGenerator from "Applications/ColorGenerator.js/ColorGenerator";
+import ShoppingList from "Applications/ShoppingList/ShoppingList";
 
 
 
@@ -35,8 +36,8 @@ const Skeliton = () => {
          {/* <Tabs setTitle={setTitle} ></Tabs> */}
          {/* <Slider setTtitle={setTitle} ></Slider> */}
          {/* <Loremiposm setTitle={setTitle} ></Loremiposm> */}
-         <ColorGenerator setTitle={setTitle}></ColorGenerator>
-         
+         {/* <ColorGenerator setTitle={setTitle}></ColorGenerator> */}
+         <ShoppingList title={setTitle} ></ShoppingList>
         
         
       </div>
