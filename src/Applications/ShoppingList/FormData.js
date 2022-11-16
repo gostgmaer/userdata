@@ -10,35 +10,39 @@ const FormData = ({
   setprice,
   price,
   itemName,
-  setitemName,
+  setitemName,setbutton,
   button,
   selectItem,
 }) => {
-  const updateItem = async (id, itemName, price) => {
-    const newItem = ItemsList.map((item) =>
-      item.id === id ? { id, itemName, price } : item
+  const updateItem = async (id, item, price) => {
+    const newItem = ItemsList.map((data) =>
+      data.id === id ? { id, item, price } : data
     );
     setItemsList(newItem);
   };
   useEffect(() => {
     if (selectItem) {
-      setitemName(selectItem.itemName);
+      setitemName(selectItem.item);
       setprice(selectItem.price);
+    }else{
+      setitemName("");
+      setprice("");
     }
-  });
+  }, [selectItem, setitemName, setprice]);
 
   const addItems = (e) => {
     e.preventDefault();
     let data = { price: price, item: itemName, id: uuidv4() };
-    // if (ItemsList.findIndex((item) => item.itemName === itemName)) {
-
-    // } else {
-    //   notifyerror("Please Change Item Name", 2000);
-    // }
     setItemsList([...ItemsList, data]);
+    setitemName("");
+    setprice("");
   };
   const editItems = (e) => {
-    updateItem();
+    updateItem(selectItem.id, itemName, price);
+    setbutton(true)
+  
+    setitemName("");
+    setprice("");
   };
   const handleitem = (e) => {
     setitemName(e.target.value);

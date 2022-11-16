@@ -21,7 +21,7 @@ const ShoppingList = ({ title }) => {
         price={price}
         itemName={itemName} button={button}
         setitemName={setitemName}
-        setItemsList={setItemsList} selectItem={selectItem}
+        setItemsList={setItemsList} selectItem={selectItem} setbutton={setbutton}
       ></FormData>
 
       <div className=" col-8  m-auto">
