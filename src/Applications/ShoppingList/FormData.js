@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { BiCart, BiDollar, BiPhone } from "react-icons/bi";
 import { push } from "firebase/database";
 import { v4 as uuidv4 } from "uuid";
-import { notifyerror } from "Utils/Notification/notify";
+import { notifyerror, notifyinfo, notifySuccess } from "Utils/Notification/notify";
 
 const FormData = ({
   setItemsList,
@@ -36,6 +36,7 @@ const FormData = ({
     setItemsList([...ItemsList, data]);
     setitemName("");
     setprice("");
+    notifySuccess('Item add SuccessFul!...',2000)
   };
   const editItems = (e) => {
     updateItem(selectItem.id, itemName, price);
@@ -43,6 +44,7 @@ const FormData = ({
   
     setitemName("");
     setprice("");
+    notifyinfo('Item Edit SuccessFul!...',2000)
   };
   const handleitem = (e) => {
     setitemName(e.target.value);
@@ -50,6 +52,10 @@ const FormData = ({
   const handlePrice = (e) => {
     setprice(e.target.value);
   };
+  const clearALLItem=()=>{
+    setItemsList([])
+    notifyerror("All Items Removed...",5000)
+  }
   return (
     <div>
       <div className=" col-8  m-auto">
@@ -112,7 +118,7 @@ const FormData = ({
                     >
                       Edit Item
                     </button>
-                  )}
+                  )} <button type="button" onClick={clearALLItem} class="btn btn-primary">Clear All</button>
                 </div>
               </div>
             </div>

@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import { BiEdit, BiTrash } from "react-icons/bi";
+import { notifywarning } from "Utils/Notification/notify";
 
 
 const ListShow = ({ price, item, id, ItemsList, setItemsList,idName,setbutton,setselectItem }) => {
@@ -11,6 +12,7 @@ const ListShow = ({ price, item, id, ItemsList, setItemsList,idName,setbutton,se
   };
   const deleteItem = async (e) => {
     setItemsList(ItemsList.filter((data) => data.id !== e));
+    notifywarning("Item Delete Success!....",2000)
    
   };
   return (
