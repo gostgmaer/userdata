@@ -14,32 +14,31 @@ import Slider from "Applications/Slider/Slider";
 import Loremiposm from "Applications/LoremIpsom/Loremiposm";
 import ColorGenerator from "Applications/ColorGenerator.js/ColorGenerator";
 import ShoppingList from "Applications/ShoppingList/ShoppingList";
-
-
+import CartItemData from "Applications/ShoppingCart/CartItemData";
+// import Shoppingcart from "Applications/ShoppingCart/Shoppingcart";
 
 const Skeliton = () => {
-  const [title,setTitle]=useState("")
+  const [title, setTitle] = useState("");
   return (
     <div>
-      
       <SimpleHeading title={title}></SimpleHeading>
       <div className=" p-1 rounded-0 card text-center">
         {/* <Birthday setTitle={setTitle} ></Birthday> */}
-         {/* <ImageGallery setTitle={setTitle} ></ImageGallery> */}
-         {/* <Review setTitle={setTitle} ></Review> */}
-         {/* <HotelListing setTitle={setTitle} ></HotelListing> */}
-          {/* <Tours setTitle={setTitle} ></Tours> */}
-         {/* <Accordian setTitle={setTitle} ></Accordian> */}
-         {/* <Accordian setTitle={setTitle}></Accordian> */}
-         {/* <FoodList setTitle={setTitle} ></FoodList> */}
-         {/* <Modal></Modal> */}
-         {/* <Tabs setTitle={setTitle} ></Tabs> */}
-         {/* <Slider setTtitle={setTitle} ></Slider> */}
-         {/* <Loremiposm setTitle={setTitle} ></Loremiposm> */}
-         {/* <ColorGenerator setTitle={setTitle}></ColorGenerator> */}
-         <ShoppingList title={setTitle} ></ShoppingList>
-        
-        
+        {/* <ImageGallery setTitle={setTitle} ></ImageGallery> */}
+        {/* <Review setTitle={setTitle} ></Review> */}
+        {/* <HotelListing setTitle={setTitle} ></HotelListing> */}
+        {/* <Tours setTitle={setTitle} ></Tours> */}
+        {/* <Accordian setTitle={setTitle} ></Accordian> */}
+        {/* <Accordian setTitle={setTitle}></Accordian> */}
+        {/* <FoodList setTitle={setTitle} ></FoodList> */}
+        {/* <Modal></Modal> */}
+        {/* <Tabs setTitle={setTitle} ></Tabs> */}
+        {/* <Slider setTtitle={setTitle} ></Slider> */}
+        {/* <Loremiposm setTitle={setTitle} ></Loremiposm> */}
+        {/* <ColorGenerator setTitle={setTitle}></ColorGenerator> */}
+        {/* <ShoppingList title={setTitle} ></ShoppingList> */}
+        {/* <Shoppingcart title={setTitle} ></Shoppingcart> */}
+        <CartItemData title={setTitle}></CartItemData>
       </div>
 
       <SimpleDate></SimpleDate>

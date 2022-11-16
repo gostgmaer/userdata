@@ -20,7 +20,7 @@ export const REQUEST = async (baseURL,endpoint,method, body,headerParams, queryP
   let response;
   try {
     response = await axios.request(option);
-    notifySuccess("data fetch Successfully!..", 2000);
+    notifySuccess("data fetch Successfully!...", 2000);
   } catch (e) {
     // catch error
       notifyerror(e.message,2000)
