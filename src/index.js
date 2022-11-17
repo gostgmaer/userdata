@@ -13,6 +13,7 @@ import reportWebVitals from "./reportWebVitals";
 
 import { Auth0Provider } from "@auth0/auth0-react";
 import { AppProvider } from "Applications/ShoppingCart/Context";
+import { BrowserRouter } from "react-router-dom";
 
 const Domain = process.env.REACT_APP_AUTH0_DOMIAN;
 const clientID = process.env.REACT_APP_AUTH0_CLIENT_ID;
@@ -24,9 +25,10 @@ const modalroot = ReactDOM.createRoot(document.getElementById("modal-root"));
 // const modalroot = ReactDOM.createRoot(document.getElementById("modal-root"));
 root.render(
   <React.StrictMode>
+    <BrowserRouter>
     <AppProvider>
       <App />
-    </AppProvider>
+    </AppProvider> </BrowserRouter>
   </React.StrictMode>
 );
 

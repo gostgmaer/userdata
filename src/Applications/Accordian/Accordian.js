@@ -8,9 +8,9 @@ import UI from './UI';
 const Accordian = ({setTitle}) => {
    
 
-    useEffect(() => {
-    setTitle("Accordian Project")
-    }, []);
+    // useEffect(() => {
+    // setTitle("Accordian Project")
+    // }, []);
   
   return (
     <div>

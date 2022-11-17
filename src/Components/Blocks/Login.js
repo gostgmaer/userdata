@@ -4,8 +4,12 @@ import { useRef, useState, useEffect, useContext } from "react";
 import AuthContext from "../../Context/AuthProvider";
 import axios from "../../api/axios";
 import jwt_decode from "jwt-decode";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Link,Outlet } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import Accordian from "Applications/Accordian/Accordian";
+import Birthday from "Applications/BirthDayReminder/Birthday";
 
 const LOGIN_URL = "/userauth/authservice/session";
 function Login() {
@@ -27,7 +31,7 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const hashedPassword  = btoa(password);
+    const hashedPassword = btoa(password);
     try {
       let loginObject = {
         grant_type: "password",
@@ -37,29 +41,28 @@ function Login() {
         searchVal: user,
       };
 
-      let response = await axios.post(
-        LOGIN_URL,
-        loginObject,
-        {
-          headers: { "Content-Type": "application/json","authorization":"Basic c2NoZWR1bGluZ3NlcnZlcjpwYXNzd29yZEAxMjM=" },
-          withCredentials: true,
-        }
-      );
-      
-        response  = response["data"]
-      const userData = jwt_decode(response["access_token"])
-    //   console.log(userData);
+      let response = await axios.post(LOGIN_URL, loginObject, {
+        headers: {
+          "Content-Type": "application/json",
+          authorization: "Basic c2NoZWR1bGluZ3NlcnZlcjpwYXNzd29yZEAxMjM=",
+        },
+        withCredentials: true,
+      });
+
+      response = response["data"];
+      const userData = jwt_decode(response["access_token"]);
+      //   console.log(userData);
       const accessToken = response["access_token"];
       const roles = userData["payload"]["role"];
       setAuth({ user, password, roles, accessToken });
 
-    //   console.log(setAuth);
+      //   console.log(setAuth);
       console.log(user, password, roles, accessToken);
       setSuccess(true);
     } catch (error) {
       if (!error?.response) {
         SetErrmsg("Server Not Respond");
-        toast.error("Server Not Respond",{
+        toast.error("Server Not Respond", {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -67,8 +70,8 @@ function Login() {
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          theme: "light",}
-          );
+          theme: "light",
+        });
       } else if (error.response?.status === 400) {
         SetErrmsg("Missing Username or Password");
       } else if (error.response?.status === 401) {
@@ -79,7 +82,7 @@ function Login() {
       errRef.current.focus();
     }
   };
-  let notify =(message,msgType)=>{
+  let notify = (message, msgType) => {
     toast.msgType(`${message}`, {
       position: "top-right",
       autoClose: 5000,
@@ -89,8 +92,8 @@ function Login() {
       draggable: true,
       progress: undefined,
       theme: "light",
-      });
-  }
+    });
+  };
   return (
     <React.Fragment>
       {succcess ? (
@@ -152,12 +155,17 @@ function Login() {
             </div>
             <div>
               <p>
-                Need a Account ? <br />{" "}
+                Need a Account ? <br />
                 <span className="line link-info">
                   {/*react router url*/}
-                  <a href="#">Sign up</a>
+                  <Link to="" className=" btn btn-info">
+                    Sign up
+                  </Link>
                 </span>{" "}
+               
+                <Link to='/users'>USERS</Link>
               </p>
+              <Outlet/>
             </div>
           </form>
         </div>
