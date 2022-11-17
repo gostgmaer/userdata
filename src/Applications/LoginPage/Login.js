@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import { NavLink } from "react-router-dom";
 const date = new Date().toDateString();
 function LoginPage() {
   const { loginWithRedirect, logout } = useAuth0();
@@ -12,20 +13,18 @@ function LoginPage() {
           <div className="form-group  p-5">
             <label className=" pb-4">Login or Logout</label>
             <div>
-              <button
-                type="button"
-                onClick={loginWithRedirect}
+              <NavLink to='/login'
+              
                 className="btn btn-primary m-2"
               >
                 Login
-              </button>
-              <button
-                type="button"
-                onClick={logout}
+              </NavLink>
+              <NavLink
+                to='/registration'
                 className="btn btn-warning m-2"
               >
-                logout
-              </button>
+                SignUp
+              </NavLink>
             </div>
           </div>
 
