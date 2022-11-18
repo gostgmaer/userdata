@@ -104,7 +104,7 @@ function Login() {
           </p>
         </div>
       ) : (
-        <div className="  card-body">
+        <div className="col-4 m-auto card card-body">
           <p
             ref={errRef}
             className={errmsg ? "errmsg" : "offscreen"}
@@ -158,7 +158,7 @@ function Login() {
                 Need a Account ? <br />
                 <span className="line link-info">
                   {/*react router url*/}
-                  <Link to="" className=" btn btn-info">
+                  <Link to="/registration" className=" btn btn-info">
                     Sign up
                   </Link>
                 </span>{" "}

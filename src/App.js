@@ -14,8 +14,8 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
-      {/* <Skeliton></Skeliton> */}
-      <Router></Router>
+      <Skeliton></Skeliton>
+      {/* <Router></Router> */}
       <Footer></Footer>
     </div>
   );

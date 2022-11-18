@@ -43,7 +43,7 @@ function Registration() {
     return update(ref(database), updates);
   };
   return (
-    <div>
+    <div className="card-body card col-6 m-auto ">
       <div className="form">
         <div className="form-body">
           <div className="username">
@@ -104,7 +104,7 @@ function Registration() {
           </div>
         </div>
         <div className="footer">
-          <button type="submit" onClick={() => handleSubmit()} className="btn">
+          <button type="submit" onClick={() => handleSubmit()} className="btn btn-primary">
             Register
           </button>
         </div>

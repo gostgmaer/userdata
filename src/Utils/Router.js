@@ -1,4 +1,5 @@
 import Accordian from "Applications/Accordian/Accordian";
+import AccordianData from "Applications/Accordian/NEW/AccordianData";
 import Birthday from "Applications/BirthDayReminder/Birthday";
 import Calculator from "Applications/Calculator/Calculator";
 import LoginPage from "Applications/LoginPage/Login";
@@ -20,7 +21,7 @@ const Router = () => {
         <Route path="" element={<LoginPage></LoginPage>}></Route>
         <Route path="login" element={<Login></Login>}>
           <Route path="search" element={<SearchFilter></SearchFilter>}></Route>
-          <Route index element={<SearchFilter></SearchFilter>}></Route>
+          {/* <Route index element={<SearchFilter></SearchFilter>}></Route> */}
         </Route>
         <Route
           path="registration"
