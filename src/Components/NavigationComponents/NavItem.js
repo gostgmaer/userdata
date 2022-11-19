@@ -4,9 +4,9 @@ import { NavLink,Link } from "react-router-dom";
 const NavItem = ({ id, text, url, icon }) => {
   return (
     <li className="NavItem">
-      <Link className=" nav-link p-2 nav-link px-2 h5" to={url} title={text}>
+      <NavLink className="nav-link px-2 text-black" to={url} title={text}>
         {text}
-      </Link>
+      </NavLink>
     </li>
   );
 };

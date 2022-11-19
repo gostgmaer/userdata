@@ -6,7 +6,6 @@ import "./index.css";
 import App from "./App";
 import "./Assets/Styles.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
 import $ from "jquery";
 import Popper from "popper.js";
 import reportWebVitals from "./reportWebVitals";
@@ -14,6 +13,7 @@ import reportWebVitals from "./reportWebVitals";
 import { Auth0Provider } from "@auth0/auth0-react";
 import { AppProvider } from "Applications/ShoppingCart/Context";
 import { BrowserRouter } from "react-router-dom";
+import  "bootstrap/dist/js/bootstrap.bundle.min";
 
 const Domain = process.env.REACT_APP_AUTH0_DOMIAN;
 const clientID = process.env.REACT_APP_AUTH0_CLIENT_ID;

@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Brand = () => {
   return (
-    <div>Brand</div>
+    <Link className='navbar-brand' to="/">Brand</Link>
   )
 }
 

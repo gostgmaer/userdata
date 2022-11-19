@@ -6,6 +6,7 @@ import LoginPage from "Applications/LoginPage/Login";
 import UserDetails from "Applications/Navigation/UserDetails";
 import Users from "Applications/Navigation/users";
 import SearchFilter from "Applications/SearchFilter/SearchFilter";
+import NotFound from "Components/404/NotFound";
 import Login from "Components/Blocks/Login";
 import Registration from "Components/Blocks/Registration";
 
@@ -28,11 +29,13 @@ const Router = () => {
           element={<Registration></Registration>}
         ></Route>
         <Route path="users" element={<Users></Users>}>
+          
         <Route path=':userID' element={<UserDetails></UserDetails>}></Route>
         </Route>
        
         {/* <Route path="users/2" element={<UserDetails></UserDetails>}></Route>
         <Route path="users/3" element={<UserDetails></UserDetails>}></Route> */}
+           <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
     </React.Fragment>
   );

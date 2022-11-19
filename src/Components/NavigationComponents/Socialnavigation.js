@@ -4,7 +4,7 @@ import SocialItem from "./SocialItem";
 
 const Socialnavigation = () => {
   return (
-    <ul className="Socialnavigation" >
+    <ul className="Socialnavigation social-network" >
       {socialURL.map((social) => {
         // const {id,text,url,icon}=social
         return <SocialItem key={social.id} {...social}></SocialItem>;

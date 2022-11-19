@@ -4,7 +4,7 @@ import NavItem from "./NavItem";
 
 const Navbar = () => {
   return (
-    <ul className="Navbar">
+    <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
       {NavURL.map((nav) => {
         return <NavItem key={nav.id} {...nav}></NavItem>;
       })}

@@ -41,7 +41,6 @@ function Header() {
             </ul>
 
             <div className=" text-center">
-             
               <SimpleTime></SimpleTime>
             </div>
 
