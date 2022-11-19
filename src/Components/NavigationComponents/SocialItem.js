@@ -6,27 +6,27 @@ const SocialItem = ({ id, text, url, icon }) => {
   let socialColor = {
     backgroundColor: "",
   };
-  // switch (text) {
-  //   case "jcb":
-  //     socialColor["color"] = "blue";
-  //     break;
+  switch (text) {
+    case "jcb":
+      socialColor["color"] = "blue";
+      break;
 
-  //   case "mastercard":
-  //     socialColor["color"] = "red";
-  //     break;
-  //   case "americanexpress":
-  //     socialColor["color"] = "yellow";
-  //     break;
-  //   case "bankcard":
-  //     socialColor["color"] = "orange";
-  //     break;
-  //   case "switch":
-  //     socialColor["color"] = "cyan";
-  //     break;
+    case "mastercard":
+      socialColor["color"] = "red";
+      break;
+    case "americanexpress":
+      socialColor["color"] = "yellow";
+      break;
+    case "bankcard":
+      socialColor["color"] = "orange";
+      break;
+    case "switch":
+      socialColor["color"] = "cyan";
+      break;
 
-  //   default:
-  //     break;
-  // }
+    default:
+      break;
+  }
 
   return (
     <li className=" p-2 link-light SocialItem">

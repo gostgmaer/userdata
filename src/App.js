@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
-      <NavigationHeader></NavigationHeader>
+      {/* <NavigationHeader></NavigationHeader> */}
       <Skeliton></Skeliton>
       {/* <Router></Router> */}
       <Footer></Footer>
