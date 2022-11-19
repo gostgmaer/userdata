@@ -26,38 +26,36 @@ const NavigationHeader = () => {
   return (
     <div className="NavigationHeader">
       <header className="navigationHeader">
-      <nav class="navbar navbar-light bg-light">
-        <div class="container ">
-          <div className="">
-            <Brand></Brand>
-          </div>
-          <div className=" d-flex navigation-container d-none d-sm-flex">
-            <div class=" d-flex" id="navbarSupportedContent">
-              <div className="">
-                <Navbar></Navbar>
+        <nav class="navbar navbar-light bg-light">
+          <div class="container ">
+            <div className="">
+              <Brand></Brand>
+            </div>
+            <div className=" d-flex navigation-container d-none d-sm-flex">
+              <div class=" d-flex" id="navbarSupportedContent">
+                <div className="">
+                  <Navbar></Navbar>
+                </div>
               </div>
+              {/* <div className="d-flex  col-4 text-end">
+                <Socialnavigation></Socialnavigation>
+              </div> */}
             </div>
-            <div className="d-flex  col-4 text-end">
-              <Socialnavigation></Socialnavigation>
+            <div className="d-block d-sm-none">
+              <button
+                type="button"
+                class="btn btn-primary"
+                onClick={hanburgerHandler}
+              >
+                {showMenu ? <RiCloseLine></RiCloseLine> : <BiMenu></BiMenu>}
+              </button>
             </div>
           </div>
-          <div className="d-block d-sm-none">
-            <button
-              type="button"
-              class="btn btn-primary"
-              onClick={hanburgerHandler}
-            >
-              {showMenu ? <RiCloseLine></RiCloseLine> : <BiMenu></BiMenu>}
-            </button>
-          </div>
+        </nav>
+        <div className=" mobile-header d-block d-sm-none">
+          {showMenu ? <Navbar></Navbar> : ""}
         </div>
-      </nav>
-      <div className=" mobile-header d-block d-sm-none">
-       
-        {showMenu ? <Navbar></Navbar> : ""}
-      </div>
-    </header>
-   
+      </header>
     </div>
   );
 };
