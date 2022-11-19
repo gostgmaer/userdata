@@ -31,6 +31,12 @@ const NavURL = [
     text: "Contact",
     url: "contact",
     icon: "https://robohash.org/beataeimpeditfugit.png?size=50x50&set=set1",
+  },
+  {
+    id: 5,
+    text: "Personal",
+    url: "personal-blog",
+    icon: "https://robohash.org/beataeimpeditfugit.png?size=50x50&set=set1",
   }
 ];
 const socialURL = [

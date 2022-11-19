@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { BiMenu, BiToggleRight } from "react-icons/bi";
-import { GrClose } from "react-icons/gr";
 import { RiCloseLine } from "react-icons/ri";
 import Brand from "./Brand";
 import Navbar from "./Navbar";
@@ -8,11 +7,12 @@ import Socialnavigation from "./Socialnavigation";
 import "./ComponentStyles.scss";
 
 const CustomNavigationDesign = () => {
-  const [showMenu, setshowMenu] = useState(false);
+  const [showMenuPanel, setshowMenuPanel] = useState(false);
 
   const hamburgerHandler = () => {
-    setshowMenu(!showMenu);
+    setshowMenuPanel(!showMenuPanel);
   };
+
   return (
     <header className="navigation container">
       <nav className="col-12 d-flex align-items-center">
@@ -33,11 +33,18 @@ const CustomNavigationDesign = () => {
             class="btn btn-outline-dark"
             onClick={hamburgerHandler}
           >
-            {showMenu ? <RiCloseLine></RiCloseLine> : <BiMenu></BiMenu>}
+            {showMenuPanel ? <RiCloseLine></RiCloseLine> : <BiMenu></BiMenu>}
           </button>
         </div>
       </nav>
-      {showMenu?<div className="p-0 hambergurPanel"> <Navbar></Navbar></div>:''}
+     <div> {showMenuPanel ? (
+        <div className="p-0 d-block d-sm-none hambergurPanel">
+         
+          <Navbar></Navbar>
+        </div>
+      ) : (
+        ""
+      )}</div>
     </header>
   );
 };
