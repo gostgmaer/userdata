@@ -15,6 +15,7 @@ import Loremiposm from "Applications/LoremIpsom/Loremiposm";
 import ColorGenerator from "Applications/ColorGenerator.js/ColorGenerator";
 import ShoppingList from "Applications/ShoppingList/ShoppingList";
 import CartItemData from "Applications/ShoppingCart/CartItemData";
+import Router from "Utils/Router";
 // import Shoppingcart from "Applications/ShoppingCart/Shoppingcart";
 
 const Skeliton = () => {
@@ -38,7 +39,8 @@ const Skeliton = () => {
         {/* <ColorGenerator setTitle={setTitle}></ColorGenerator> */}
         {/* <ShoppingList title={setTitle} ></ShoppingList> */}
         {/* <Shoppingcart title={setTitle} ></Shoppingcart> */}
-        <CartItemData title={setTitle}></CartItemData>
+        {/* <CartItemData title={setTitle}></CartItemData> */}
+        <Router></Router>
       </div>
 
       <SimpleDate></SimpleDate>
