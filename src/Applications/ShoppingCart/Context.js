@@ -28,22 +28,25 @@ const AppProvider = ({ children }) => {
     dispatch({ type: "REMOVE", payload: id });
   };
   const fetchData = async () => {
-    dispatch({type:'LOADING'})
-    const res= await REQUEST('https://course-api.com/','react-useReducer-cart-project','get','','','','')
-    const cart = res
+    dispatch({ type: "LOADING" });
+    const res = await REQUEST(
+      "https://course-api.com/",
+      "react-useReducer-cart-project",
+      "get",
+      "",
+      "",
+      "",
+      ""
+    );
+    const cart = res;
     console.log(res);
-    dispatch({type:"DISPLAY_ITEMS",payload:cart})
-    
-   
+    dispatch({ type: "DISPLAY_ITEMS", payload: cart });
   };
-  const toggleAmount =(id,type)=>{
-    dispatch({type:'TOGGLE_AMOUNT',payload:{id,type}})
-
-  }
+  const toggleAmount = (id, type) => {
+    dispatch({ type: "TOGGLE_AMOUNT", payload: { id, type } });
+  };
   useEffect(() => {
-    fetchData()
-  
-    
+    fetchData();
   }, []);
   const increase = (id) => {
     dispatch({ type: "INCREASE", payload: id });
@@ -61,7 +64,8 @@ const AppProvider = ({ children }) => {
         clearCart,
         remove,
         increase,
-        decress,toggleAmount
+        decress,
+        toggleAmount,
       }}
     >
       {children}
