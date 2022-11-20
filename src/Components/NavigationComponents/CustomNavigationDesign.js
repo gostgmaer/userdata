@@ -5,14 +5,25 @@ import Brand from "./Brand";
 import Navbar from "./Navbar";
 import Socialnavigation from "./Socialnavigation";
 import "./ComponentStyles.scss";
+import Button from "Resuable/Button/Button";
+import { REQUEST } from "api/APIService";
+
 
 const CustomNavigationDesign = () => {
   const [showMenuPanel, setshowMenuPanel] = useState(false);
+  const [text, settext] = useState('false');
 
   const hamburgerHandler = () => {
     setshowMenuPanel(!showMenuPanel);
   };
-
+const btnClickhandler = async()=>{
+  let res = await REQUEST('https://youtube-music1.p.rapidapi.com/v2/','search','get','', {
+    'X-RapidAPI-Key': '8842f2a974msh6b0949e628a5e32p13683ejsn3912b12003ed',
+    'X-RapidAPI-Host': 'youtube-music1.p.rapidapi.com'
+  },{query: 'eminem'},''  )
+  console.log(res);
+  
+}
   return (
     <header className="navigation container">
       <nav className="col-12 d-flex align-items-center">
@@ -36,6 +47,7 @@ const CustomNavigationDesign = () => {
             {showMenuPanel ? <RiCloseLine></RiCloseLine> : <BiMenu></BiMenu>}
           </button>
         </div>
+        {/* <Button classes='btn btn-info' btntext={text} event={btnClickhandler} ></Button> */}
       </nav>
      <div> {showMenuPanel ? (
         <div className="p-0 d-block d-sm-none hambergurPanel">
