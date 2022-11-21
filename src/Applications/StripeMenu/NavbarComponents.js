@@ -5,6 +5,16 @@ import { RiReactjsFill } from "react-icons/ri";
 
 const NavbarComponents = () => {
   const { openSidebar, openSubmenu, closeSubmenu } = useGlobalContext();
+  const displaySubmenu = (e)=>{
+    console.log(e.target.textContent);
+    const page = e.target.textContent
+    const tempBtn = e.target.getBoundingClientRect();
+    console.log(tempBtn);
+    const center = (tempBtn.left +tempBtn.right)/2;
+    const bottom = tempBtn.bottom-3
+
+    openSubmenu(page,{center,bottom})
+  }
   return (
     <nav className="nav">
       <div className="nav-center">
@@ -16,16 +26,16 @@ const NavbarComponents = () => {
         </div>
         <ul className="nav-links">
           <li>
-            <button className=" link-btn ">products</button>
+            <button className=" link-btn " onMouseOver={displaySubmenu} >products</button>
           </li>
           <li>
-            <button className=" link-btn ">developers</button>
+            <button className=" link-btn" onMouseOver={displaySubmenu}>developers</button>
           </li>
           <li>
-            <button className=" link-btn ">company</button>
+            <button className=" link-btn " onMouseOver={displaySubmenu}>company</button>
           </li>
         </ul>
-        <button className="btn signin-btn">Signin</button>
+        <button className="btn signin-btn" >Signin</button>
       </div>
     </nav>
   );
