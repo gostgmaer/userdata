@@ -1,7 +1,7 @@
 // import { async } from "@firebase/util";
 import React from "react";
 import { useRef, useState, useEffect, useContext } from "react";
-import AuthContext from "../../Context/AuthProvider";
+// import AuthContext from "../../Context/Contenxt";
 import axios from "../../api/axios";
 import jwt_decode from "jwt-decode";
 import { ToastContainer, toast } from "react-toastify";
@@ -13,7 +13,7 @@ import Birthday from "Applications/BirthDayReminder/Birthday";
 
 const LOGIN_URL = "/userauth/authservice/session";
 function Login() {
-  const { setAuth } = useContext(AuthContext);
+  // const { setAuth } = useContext(AuthContext);
   const userRef = useRef();
   const errRef = useRef();
   const [user, setUser] = useState("");
@@ -54,7 +54,7 @@ function Login() {
       //   console.log(userData);
       const accessToken = response["access_token"];
       const roles = userData["payload"]["role"];
-      setAuth({ user, password, roles, accessToken });
+      // setAuth({ user, password, roles, accessToken });
 
       //   console.log(setAuth);
       console.log(user, password, roles, accessToken);
