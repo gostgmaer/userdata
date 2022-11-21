@@ -16,8 +16,10 @@ import ColorGenerator from "Applications/ColorGenerator.js/ColorGenerator";
 import ShoppingList from "Applications/ShoppingList/ShoppingList";
 import CartItemData from "Applications/ShoppingCart/CartItemData";
 import Router from "Utils/Router";
+import { useGlobalContext } from "Context/Contenxt";
 // import Shoppingcart from "Applications/ShoppingCart/Shoppingcart";
 
+const {datalog}=useGlobalContext
 const Skeliton = () => {
   const [title, setTitle] = useState("");
   return (
@@ -40,6 +42,7 @@ const Skeliton = () => {
         {/* <ShoppingList title={setTitle} ></ShoppingList> */}
         {/* <Shoppingcart title={setTitle} ></Shoppingcart> */}
         {/* <CartItemData title={setTitle}></CartItemData> */}
+        {/* <button onClick={datalog}>ButttonLog</button> */}
         <Router></Router>
       </div>
 
