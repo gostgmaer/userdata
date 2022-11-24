@@ -1,4 +1,5 @@
-import ExpanseTracker from "Applications/ExpanseTRacker/ExpanseTracker";
+
+import MultistepForm from "Applications/MultiStepForm/MultistepForm";
 import Sidebar from "Applications/Sidebar/Sidebar";
 import StripMenu from "Applications/StripeMenu/StripMenu";
 import CustomNavigationDesign from "Components/NavigationComponents/CustomNavigationDesign";
@@ -11,7 +12,8 @@ const Homepage = () => {
       {/* <CustomNavigationDesign></CustomNavigationDesign> */}
       {/* <Sidebar></Sidebar> */}
      {/* <StripMenu></StripMenu> */}
-     <ExpanseTracker></ExpanseTracker>
+     <MultistepForm></MultistepForm>
+
     </main>
   );
 };
