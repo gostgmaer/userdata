@@ -66,7 +66,7 @@ const ListCard = ({ Tours, setTours }) => {
                 </div>
 
                 <p className="card-text">
-                  {readMore ? tour.info : `${tour.info.substring(0, 140)}.....`}
+                  {readMore ? tour.info : `${tour.info.substring(0, 20)}.....`}
 
                   {readMore ? (
                     <span
