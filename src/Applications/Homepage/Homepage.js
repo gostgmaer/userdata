@@ -1,3 +1,4 @@
+import ExpanseTracker from "Applications/ExpanseTRacker/ExpanseTracker";
 import Sidebar from "Applications/Sidebar/Sidebar";
 import StripMenu from "Applications/StripeMenu/StripMenu";
 import CustomNavigationDesign from "Components/NavigationComponents/CustomNavigationDesign";
@@ -9,7 +10,8 @@ const Homepage = () => {
     <main>
       {/* <CustomNavigationDesign></CustomNavigationDesign> */}
       {/* <Sidebar></Sidebar> */}
-     <StripMenu></StripMenu>
+     {/* <StripMenu></StripMenu> */}
+     <ExpanseTracker></ExpanseTracker>
     </main>
   );
 };
