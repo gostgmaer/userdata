@@ -10,12 +10,20 @@ import Calculator from "Applications/Calculator/Calculator";
 import LoginPage from "Applications/LoginPage/Login";
 import Router from "Utils/Router";
 import NavigationHeader from "Components/NavigationComponents/NavigationHeader";
+import { Audio,Bars } from "react-loader-spinner";
 
 function App() {
   return (
     <div className="App">
       <Header></Header>
       {/* <NavigationHeader></NavigationHeader> */}
+      {/* <Bars height = "200"
+    width = ""
+    radius = "9"
+    color = 'green'
+    ariaLabel = 'bars-loading'     
+    wrapperStyle
+    wrapperClass></Bars> */}
       <Skeliton></Skeliton>
       {/* <Router></Router> */}
       <Footer></Footer>

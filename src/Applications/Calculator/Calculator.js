@@ -18,7 +18,6 @@ const date = new Date().toDateString();
 function Calculator() {
   const [result, setResult] = useState("");
   const [input, setInput] = useState("");
-  
   const [keyvalue,SetKeyValue]=useState("");
 
 
