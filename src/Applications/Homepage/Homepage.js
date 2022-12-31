@@ -9,10 +9,11 @@ import React from "react";
 const Homepage = () => {
   return (
     <main>
+      <NavigationHeader/>
       {/* <CustomNavigationDesign></CustomNavigationDesign> */}
-      {/* <Sidebar></Sidebar> */}
+      <Sidebar></Sidebar>
      {/* <StripMenu></StripMenu> */}
-     <MultistepForm></MultistepForm>
+     {/* <MultistepForm></MultistepForm> */}
 
     </main>
   );

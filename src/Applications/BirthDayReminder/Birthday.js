@@ -1,8 +1,9 @@
 import SimpleDate from "Components/ComponentBlock/SimpleDate";
 import SimpleHeading from "Components/ComponentBlock/SimpleHeading";
 import React, { useEffect,useState } from "react";
-import List from "./List";
-import Data from "./Data";
+import Data from "./data";
+import List from "./LIst";
+
 const Birthday = ({ setTitle }) => {
 
 const [DataRes, setDataRes] = useState([]);

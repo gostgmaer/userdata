@@ -3,29 +3,14 @@ import Header from "./Components/ComponentsParts/Headers/Header";
 import React, { useState } from "react";
 import Skeliton from "Skeliton";
 import Footer from "Applications/Footer/Footer";
-import ReactDOM from "react-dom/client";
-import { Route, Routes } from "react-router-dom";
-import Accordian from "Applications/Accordian/Accordian";
-import Calculator from "Applications/Calculator/Calculator";
-import LoginPage from "Applications/LoginPage/Login";
-import Router from "Utils/Router";
-import NavigationHeader from "Components/NavigationComponents/NavigationHeader";
-import { Audio,Bars } from "react-loader-spinner";
+import { useGlobalContext } from "Context/Contenxt";
 
 function App() {
+  const { loading } = useGlobalContext();
   return (
     <div className="App">
       <Header></Header>
-      {/* <NavigationHeader></NavigationHeader> */}
-      {/* <Bars height = "200"
-    width = ""
-    radius = "9"
-    color = 'green'
-    ariaLabel = 'bars-loading'     
-    wrapperStyle
-    wrapperClass></Bars> */}
       <Skeliton></Skeliton>
-      {/* <Router></Router> */}
       <Footer></Footer>
     </div>
   );
