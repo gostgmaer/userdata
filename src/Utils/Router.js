@@ -18,25 +18,24 @@ const Router = () => {
   return (
     <React.Fragment>
       <Routes>
-        <Route path="accordian" element={<Accordian></Accordian>}></Route>
-        <Route path="calculator" element={<Calculator></Calculator>}></Route>
+        <Route path="/accordian" element={<Accordian></Accordian>}></Route>
+        <Route path="/calculator" element={<Calculator></Calculator>}></Route>
         <Route path="" element={<Homepage></Homepage>}></Route>
-        <Route path="login" element={<Login></Login>}>
-          <Route path="search" element={<SearchFilter></SearchFilter>}></Route>
+        <Route path="/search" element={<SearchFilter></SearchFilter>}></Route>
+        <Route path="/login" element={<Login></Login>}>
+        
           {/* <Route index element={<SearchFilter></SearchFilter>}></Route> */}
         </Route>
         <Route
-          path="registration"
-          element={<Registration></Registration>}
-        ></Route>
-        <Route path="users" element={<Users></Users>}>
-          
-        <Route path=':userID' element={<UserDetails></UserDetails>}></Route>
+          path="/registration"
+          element={<Registration></Registration>}></Route>
+        <Route path="/users" element={<Users></Users>}>
+          <Route path=":userID" element={<UserDetails></UserDetails>}></Route>
         </Route>
-       
+
         {/* <Route path="users/2" element={<UserDetails></UserDetails>}></Route>
         <Route path="users/3" element={<UserDetails></UserDetails>}></Route> */}
-           <Route path="*" element={<NotFound></NotFound>}></Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
     </React.Fragment>
   );

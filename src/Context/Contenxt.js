@@ -45,7 +45,7 @@ const AppProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(true);
   const [page, setPage] = useState({ page: "", links: [] });
   const [location, setLocation] = useState({});
-  const [loading, setloading] = useState(true);
+  const [loading, setloading] = useState(false);
   const [Amount, setAmount] = useState(0);
   const [Text, setText] = useState("");
   const [expanseHistory, setExpanseHistory] = useState([]);
