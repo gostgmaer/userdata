@@ -2,7 +2,11 @@ import React, { useEffect } from "react";
 import { BiCart, BiDollar, BiPhone } from "react-icons/bi";
 import { push } from "firebase/database";
 import { v4 as uuidv4 } from "uuid";
-import { notifyerror, notifyinfo, notifySuccess } from "Utils/Notification/notify";
+import {
+  notifyerror,
+  notifyinfo,
+  notifySuccess,
+} from "Utils/Notification/notify";
 
 const FormData = ({
   setItemsList,
@@ -10,7 +14,8 @@ const FormData = ({
   setprice,
   price,
   itemName,
-  setitemName,setbutton,
+  setitemName,
+  setbutton,
   button,
   selectItem,
 }) => {
@@ -24,7 +29,7 @@ const FormData = ({
     if (selectItem) {
       setitemName(selectItem.item);
       setprice(selectItem.price);
-    }else{
+    } else {
       setitemName("");
       setprice("");
     }
@@ -36,15 +41,15 @@ const FormData = ({
     setItemsList([...ItemsList, data]);
     setitemName("");
     setprice("");
-    notifySuccess('Item add SuccessFul!...',2000)
+    notifySuccess("Item add SuccessFul!...", 2000);
   };
   const editItems = (e) => {
     updateItem(selectItem.id, itemName, price);
-    setbutton(true)
-  
+    setbutton(true);
+
     setitemName("");
     setprice("");
-    notifyinfo('Item Edit SuccessFul!...',2000)
+    notifyinfo("Item Edit SuccessFul!...", 2000);
   };
   const handleitem = (e) => {
     setitemName(e.target.value);
@@ -52,10 +57,10 @@ const FormData = ({
   const handlePrice = (e) => {
     setprice(e.target.value);
   };
-  const clearALLItem=()=>{
-    setItemsList([])
-    notifyerror("All Items Removed...",5000)
-  }
+  const clearALLItem = () => {
+    setItemsList([]);
+    notifyerror("All Items Removed...", 5000);
+  };
   return (
     <div>
       <div className=" col-8  m-auto">
@@ -106,19 +111,23 @@ const FormData = ({
                     <button
                       type="button"
                       className="btn btn-primary col-4"
-                      onClick={addItems}
-                    >
+                      onClick={addItems}>
                       Add Item
                     </button>
                   ) : (
                     <button
                       type="button"
                       className="btn btn-primary col-4"
-                      onClick={editItems}
-                    >
+                      onClick={editItems}>
                       Edit Item
                     </button>
-                  )} <button type="button" onClick={clearALLItem} class="btn btn-primary">Clear All</button>
+                  )}{" "}
+                  <button
+                    type="button"
+                    onClick={clearALLItem}
+                    class="btn btn-primary">
+                    Clear All
+                  </button>
                 </div>
               </div>
             </div>

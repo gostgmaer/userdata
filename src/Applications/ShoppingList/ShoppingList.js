@@ -2,15 +2,13 @@ import React, { useEffect, useState } from "react";
 import FormData from "./FormData";
 import ListShow from "./ListShow";
 
-const ShoppingList = ({ title }) => {
+const ShoppingList = () => {
   const [itemName, setitemName] = useState("");
   const [price, setprice] = useState("");
   const [ItemsList, setItemsList] = useState([]);
   const [selectItem, setselectItem] = useState(null);
   const [button, setbutton] = useState(true);
-  useEffect(() => {
-    title("Shopping List Application");
-  }, []);
+ 
   console.log(selectItem);
   // console.log(ItemsList);
   return (
@@ -19,10 +17,12 @@ const ShoppingList = ({ title }) => {
         setprice={setprice}
         ItemsList={ItemsList}
         price={price}
-        itemName={itemName} button={button}
+        itemName={itemName}
+        button={button}
         setitemName={setitemName}
-        setItemsList={setItemsList} selectItem={selectItem} setbutton={setbutton}
-      ></FormData>
+        setItemsList={setItemsList}
+        selectItem={selectItem}
+        setbutton={setbutton}></FormData>
 
       <div className=" col-8  m-auto">
         <div className=" m-2 rounded-3 d-flex card text-center">
@@ -30,14 +30,20 @@ const ShoppingList = ({ title }) => {
             Please Fill te Form To Continue
           </div>
           <ul class="list-group list-group-numbered">
-        {ItemsList.map((item, index) => {
-          return <ListShow setbutton={setbutton} setselectItem={setselectItem} setItemsList={setItemsList} ItemsList={ItemsList} key={index} {...item}></ListShow>;
-        })}
-      </ul>
+            {ItemsList.map((item, index) => {
+              return (
+                <ListShow
+                  setbutton={setbutton}
+                  setselectItem={setselectItem}
+                  setItemsList={setItemsList}
+                  ItemsList={ItemsList}
+                  key={index}
+                  {...item}></ListShow>
+              );
+            })}
+          </ul>
         </div>
       </div>
-
-     
     </div>
   );
 };
