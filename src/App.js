@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Header></Header>
       <Skeliton></Skeliton>
-      <ShoppingList></ShoppingList>
+     
       <Footer></Footer>
     </div>
   );

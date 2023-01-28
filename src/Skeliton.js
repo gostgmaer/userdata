@@ -19,30 +19,12 @@ import Router from "Utils/Router";
 import { useGlobalContext } from "Context/Contenxt";
 // import Shoppingcart from "Applications/ShoppingCart/Shoppingcart";
 
-const {datalog}=useGlobalContext
+const { datalog } = useGlobalContext;
 const Skeliton = () => {
   const [title, setTitle] = useState("");
   return (
     <div>
-      <SimpleHeading title={title}></SimpleHeading>
       <div className=" p-1 rounded-0 card text-center">
-        {/* <Birthday setTitle={setTitle} ></Birthday> */}
-        {/* <ImageGallery setTitle={setTitle} ></ImageGallery> */}
-        {/* <Review setTitle={setTitle} ></Review> */}
-        {/* <HotelListing setTitle={setTitle} ></HotelListing> */}
-        {/* <Tours setTitle={setTitle} ></Tours> */}
-        {/* <Accordian setTitle={setTitle} ></Accordian> */}
-        {/* <Accordian setTitle={setTitle}></Accordian> */}
-        {/* <FoodList setTitle={setTitle} ></FoodList> */}
-        {/* <Modal></Modal> */}
-        {/* <Tabs setTitle={setTitle} ></Tabs> */}
-        {/* <Slider setTtitle={setTitle} ></Slider> */}
-        {/* <Loremiposm setTitle={setTitle} ></Loremiposm> */}
-        {/* <ColorGenerator setTitle={setTitle}></ColorGenerator> */}
-        {/* <ShoppingList title={setTitle} ></ShoppingList> */}
-        {/* <Shoppingcart title={setTitle} ></Shoppingcart> */}
-        {/* <CartItemData title={setTitle}></CartItemData> */}
-        {/* <button onClick={datalog}>ButttonLog</button> */}
         <Router></Router>
       </div>
 

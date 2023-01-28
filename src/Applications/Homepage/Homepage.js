@@ -1,4 +1,5 @@
 
+import Calculator from "Applications/Calculator/Calculator";
 import MultistepForm from "Applications/MultiStepForm/MultistepForm";
 import Sidebar from "Applications/Sidebar/Sidebar";
 import StripMenu from "Applications/StripeMenu/StripMenu";
@@ -11,9 +12,10 @@ const Homepage = () => {
     <main>
       <NavigationHeader/>
       {/* <CustomNavigationDesign></CustomNavigationDesign> */}
-      <Sidebar></Sidebar>
+      {/* <Sidebar></Sidebar> */}
      {/* <StripMenu></StripMenu> */}
      {/* <MultistepForm></MultistepForm> */}
+     <Calculator> </Calculator>
 
     </main>
   );
