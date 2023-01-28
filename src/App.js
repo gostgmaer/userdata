@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Skeliton from "Skeliton";
 import Footer from "Applications/Footer/Footer";
 import { useGlobalContext } from "Context/Contenxt";
+import ShoppingList from "Applications/ShoppingList/ShoppingList";
 
 function App() {
   const { loading } = useGlobalContext();
@@ -11,6 +12,7 @@ function App() {
     <div className="App">
       <Header></Header>
       <Skeliton></Skeliton>
+     
       <Footer></Footer>
     </div>
   );

@@ -1,31 +1,36 @@
 import { REQUEST } from "api/APIService";
 import React, { useEffect, useState } from "react";
+import { cleanQueryparam } from "../../Utils/OthersUtilities";
 
 const Data = ({ setMovieList }) => {
   const [query, setquery] = useState("");
   let params = {
     headers: {
       "X-RapidAPI-Key": process.env.REACT_APP_RapidAPIKEY,
-      "X-RapidAPI-Host": "movies-app1.p.rapidapi.com",
+      "X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com",
     },
     params: {
-      page: "",
-      limit: "20",
-      sort: "year",
-      type: "movies",
-      query: "Ok",
+      titleType: "",
+      genre: "",
+      list: "",
+      sort: "",
+      limit: "50",
+      endYear: "",
       year: "",
-      genres: "accion",
+      info: "",
+      page: "1",
+      startYear: "",
     },
   };
+  cleanQueryparam(params.params);
   useEffect(() => {
     apicall();
-  }, [query]);
+  }, []);
 
   let apicall = async () => {
     let res = await REQUEST(
-      "https://movies-app1.p.rapidapi.com/api/",
-      "movies",
+      "https://moviesdatabase.p.rapidapi.com/",
+      "titles",
       "get",
       "",
       params.headers,
@@ -33,7 +38,6 @@ const Data = ({ setMovieList }) => {
       ""
     );
     setMovieList(res);
-   
   };
 };
 
