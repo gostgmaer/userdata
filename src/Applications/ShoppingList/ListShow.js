@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import { BiEdit, BiTrash } from "react-icons/bi";
-import { notifywarning } from "Utils/Notification/notify";
+import { notifywarning } from "../../Utils/Notification/notify";
+
 
 
 const ListShow = ({ price, item, id, ItemsList, setItemsList,idName,setbutton,setselectItem }) => {

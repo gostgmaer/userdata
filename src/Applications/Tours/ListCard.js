@@ -1,6 +1,7 @@
-import { REQUEST } from "api/APIService";
+
 import React, { useState } from "react";
 import { BiDollar } from "react-icons/bi";
+import { REQUEST } from "../../api/APIService";
 
 const ListCard = ({ Tours, setTours }) => {
   const [readMore, setreadMore] = useState(false);

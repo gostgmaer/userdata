@@ -2,7 +2,7 @@ import React from "react";
 import { BiSearch } from "react-icons/bi";
 import APIcall from "./APIcall";
 import axios from "axios";
-import { notifyerror,notifySuccess } from "Utils/Notification/notify";
+import { notifyerror,notifySuccess } from "../../Utils/Notification/notify";
 
 const SearchForm = ({ queryData, setqueryData, img, setimg }) => {
   let query = {

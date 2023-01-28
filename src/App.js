@@ -1,10 +1,10 @@
 import "./App.css";
 import Header from "./Components/ComponentsParts/Headers/Header";
 import React, { useState } from "react";
-import Skeliton from "Skeliton";
-import Footer from "Applications/Footer/Footer";
-import { useGlobalContext } from "Context/Contenxt";
-import ShoppingList from "Applications/ShoppingList/ShoppingList";
+import { useGlobalContext } from "./Context/Contenxt";
+import Skeliton from "./Skeliton";
+import Footer from "./Applications/Footer/Footer";
+
 
 function App() {
   const { loading } = useGlobalContext();

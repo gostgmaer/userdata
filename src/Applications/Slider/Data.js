@@ -1,5 +1,6 @@
-import { REQUEST } from "api/APIService";
+
 import React, { useEffect, useState } from "react";
+import { REQUEST } from "../../api/APIService";
 import { cleanQueryparam } from "../../Utils/OthersUtilities";
 
 const Data = ({ setMovieList }) => {

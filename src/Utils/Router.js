@@ -1,19 +1,17 @@
-import Accordian from "Applications/Accordian/Accordian";
-import AccordianData from "Applications/Accordian/NEW/AccordianData";
-import Birthday from "Applications/BirthDayReminder/Birthday";
-import Calculator from "Applications/Calculator/Calculator";
-import Homepage from "Applications/Homepage/Homepage";
-import LoginPage from "Applications/LoginPage/Login";
-import UserDetails from "Applications/Navigation/UserDetails";
-import Users from "Applications/Navigation/users";
-import SearchFilter from "Applications/SearchFilter/SearchFilter";
-import Slider from "Applications/Slider/Slider";
-import NotFound from "Components/404/NotFound";
-import Login from "Components/Blocks/Login";
-import Registration from "Components/Blocks/Registration";
+
 
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import Accordian from "../Applications/Accordian/Accordian";
+import Calculator from "../Applications/Calculator";
+import Homepage from "../Applications/Homepage/Homepage";
+import Login from "../Applications/LoginPage/Login";
+import UserDetails from "../Applications/MultiStepForm/userDetails";
+import Users from "../Applications/Navigation/users";
+import SearchFilter from "../Applications/SearchFilter/SearchFilter";
+import Slider from "../Applications/Slider/Slider";
+import NotFound from "../Components/404/NotFound";
+import Registration from "../Components/Blocks/Registration";
 
 const Router = () => {
   return (

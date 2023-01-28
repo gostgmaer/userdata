@@ -1,8 +1,9 @@
-import Accordian from "Applications/Accordian/Accordian";
-import Calculator from "Applications/Calculator/Calculator";
-import LoginPage from "Applications/LoginPage/Login";
+
 import React from "react";
 import { Route, Router, Routes } from "react-router-dom";
+import Accordian from "../Accordian/Accordian";
+import Calculator from "../Calculator";
+import LoginPage from "../LoginPage/Login";
 
 const Navigation = () => {
   return (

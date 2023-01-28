@@ -6,7 +6,7 @@ import {
   notifyerror,
   notifyinfo,
   notifySuccess,
-} from "Utils/Notification/notify";
+} from "../../Utils/Notification/notify";
 
 const FormData = ({
   setItemsList,

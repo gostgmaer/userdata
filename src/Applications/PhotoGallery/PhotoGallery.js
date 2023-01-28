@@ -1,6 +1,7 @@
-import SimpleDate from "Components/ComponentBlock/SimpleDate";
-import SimpleHeading from "Components/ComponentBlock/SimpleHeading";
+
 import React, { useEffect, useState } from "react";
+import SimpleDate from "../../Components/ComponentBlock/SimpleDate";
+import SimpleHeading from "../../Components/ComponentBlock/SimpleHeading";
 import UploadForm from "./UploadForm";
 
 

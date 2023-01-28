@@ -1,5 +1,6 @@
-import { REQUEST } from "api/APIService";
+
 import React, { useState, useContext, useReducer, useEffect } from "react";
+import { REQUEST } from "../../api/APIService";
 import cartItems from "./data";
 import reducer from "./reducer";
 
@@ -11,7 +12,7 @@ cartItems.map((item) => {
   item.amount = Number(item.amount);
 });
 
-const AppContext = React.createContext();
+const AppContext = React.createContext(null);
 const initialState = {
   loading: false,
   cart: cartItems,

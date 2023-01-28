@@ -1,5 +1,6 @@
-import { useGlobalContext } from "Context/Contenxt";
+
 import React from "react";
+import { useGlobalContext } from "../../Context/Contenxt";
 
 const Form = () => {
   const { setAmount, setText, addExpanse, Amount, Text } = useGlobalContext();

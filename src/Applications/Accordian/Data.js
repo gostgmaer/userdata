@@ -1,7 +1,8 @@
-import { REQUEST } from "api/APIService";
+
 import React, { useEffect, useState } from "react";
 import { BiMinusCircle, BiPlusCircle } from "react-icons/bi";
 import { v4 as uuidv4 } from "uuid";
+import { REQUEST } from "../../api/APIService";
 import AccordianCard from "./AccordianCard";
 
 const Data = ({ Questions, setQuestions }) => {

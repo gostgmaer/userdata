@@ -6,7 +6,7 @@ import {
   notifyerror,
   notifyinfo,
   notifywarning,
-} from "Utils/Notification/notify";
+} from "../Utils/Notification/notify";
 
 
 export const REQUEST = async (baseURL,endpoint,method, body,headerParams, queryParam, urlParam) => {

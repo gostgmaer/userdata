@@ -1,6 +1,7 @@
-import SimpleDate from "Components/ComponentBlock/SimpleDate";
-import SimpleHeading from "Components/ComponentBlock/SimpleHeading";
+
 import React,{useState} from "react";
+import SimpleDate from "../../Components/ComponentBlock/SimpleDate";
+import SimpleHeading from "../../Components/ComponentBlock/SimpleHeading";
 import APicall from "./APicall";
 import Show from "./Show";
 
