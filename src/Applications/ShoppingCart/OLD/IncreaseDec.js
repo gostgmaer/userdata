@@ -8,7 +8,7 @@ import {
   BiTrash,
 } from "react-icons/bi";
 import { BiMinus } from "react-icons/bi";
-import { notifyinfo } from "Utils/Notification/notify";
+import { notifyinfo } from "../../../Utils/Notification/notify";
 const IncreaseDec = ({ count, setCount }) => {
     if (count<0) {
         setCount(0)

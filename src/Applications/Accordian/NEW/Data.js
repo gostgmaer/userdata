@@ -1,7 +1,8 @@
-import { REQUEST } from "api/APIService";
+
 import React, { useEffect, useState } from "react";
 
 import { v4 as uuidv4 } from "uuid";
+import { REQUEST } from "../../../api/APIService";
 import UI from "./UI";
 
 const Data = ({ Questions, setQuestions }) => {

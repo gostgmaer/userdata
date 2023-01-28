@@ -1,6 +1,7 @@
 import React from "react";
-import { useGlobalContext } from "Context/Contenxt";
+
 import { Bars, Circles, ThreeDots } from "react-loader-spinner";
+import { useGlobalContext } from "../../Context/Contenxt";
 import Transsection from "./Transsection";
 const ShowExpanseList = () => {
   const { expanseHistory, loading } = useGlobalContext();

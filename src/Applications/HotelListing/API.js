@@ -25,8 +25,9 @@
 // };
 
 // export default API;
-import { REQUEST } from "api/APIService";
+
 import React, { useEffect } from "react";
+import { REQUEST } from "../../api/APIService";
 
 const API = ({ setHotels, location, setlocation }) => {
 

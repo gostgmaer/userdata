@@ -1,7 +1,8 @@
 import React from "react";
 import { BiColorFill, BiMagnet } from "react-icons/bi";
-import { notifyerror } from "Utils/Notification/notify";
+
 import Values from "values.js";
+import { notifyerror } from "../../Utils/Notification/notify";
 const Form = ({ setvalue, value, seterror, list }) => {
   const handleChange = (e) => {
     setvalue(e.target.value);

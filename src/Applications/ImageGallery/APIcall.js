@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-import { notifyerror, notifySuccess } from "Utils/Notification/notify";
+import { notifyerror, notifySuccess } from "../../Utils/Notification/notify";
 
 const APIcall = ({ queryData, setqueryData, img, setimg }) => {
   // const [queryData, setqueryData] = useState();

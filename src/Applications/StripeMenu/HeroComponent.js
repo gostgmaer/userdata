@@ -1,5 +1,6 @@
-import { useGlobalContext } from "Context/Contenxt";
+
 import React from "react";
+import { useGlobalContext } from "../../Context/Contenxt";
 import phoneimg from "../../images/phone.svg";
 
 const HeroComponent = () => {

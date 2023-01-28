@@ -1,26 +1,14 @@
 import React, { useEffect, useState } from "react";
-import SimpleHeading from "Components/ComponentBlock/SimpleHeading";
 import SimpleDate from "./Components/ComponentBlock/SimpleDate";
-import Birthday from "Applications/BirthDayReminder/Birthday";
-import ImageGallery from "Applications/ImageGallery/ImageGallery";
-import Review from "Applications/Testomonial/Review";
-import HotelListing from "Applications/HotelListing/HotelListing";
-import Tours from "Applications/Tours/Tours";
-import Accordian from "Applications/Accordian/NEW/Accordian";
-import FoodList from "Applications/Rasterorent/FoodList";
-import Tabs from "Applications/ReactTabs/Tabs";
-import Modal from "Modal";
-import Slider from "Applications/Slider/Slider";
-import Loremiposm from "Applications/LoremIpsom/Loremiposm";
-import ColorGenerator from "Applications/ColorGenerator.js/ColorGenerator";
-import ShoppingList from "Applications/ShoppingList/ShoppingList";
-import CartItemData from "Applications/ShoppingCart/CartItemData";
-import Router from "Utils/Router";
-import { useGlobalContext } from "Context/Contenxt";
+import { useGlobalContext } from "./Context/Contenxt";
+import Router from "./Utils/Router";
+
 // import Shoppingcart from "Applications/ShoppingCart/Shoppingcart";
 
-const { datalog } = useGlobalContext;
+
+
 const Skeliton = () => {
+  const { datalog } = useGlobalContext;
   const [title, setTitle] = useState("");
   return (
     <div>

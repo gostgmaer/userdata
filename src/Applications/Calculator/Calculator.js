@@ -106,7 +106,6 @@ const clearHandler = ()=>{
                           /
                         </button>
                       </div>
-
                       <div className="text-center select_button">
                         <button onClick={clickValueHanlder}
                           name="4"

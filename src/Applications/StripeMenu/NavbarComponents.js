@@ -1,7 +1,8 @@
-import { useGlobalContext } from "Context/Contenxt";
+
 import React from "react";
 import { BiMenu } from "react-icons/bi";
 import { RiReactjsFill } from "react-icons/ri";
+import { useGlobalContext } from "../../Context/Contenxt";
 
 const NavbarComponents = () => {
   const { openSidebar, openSubmenu, closeSubmenu } = useGlobalContext();

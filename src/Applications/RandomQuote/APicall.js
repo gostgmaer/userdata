@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-import { notifyerror, notifyinfo } from "Utils/Notification/notify";
+import { notifyerror, notifyinfo } from "../../Utils/Notification/notify";
 
 const APicall = ({ options, url, value, setValue }) => {
   useEffect(() => {

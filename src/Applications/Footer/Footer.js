@@ -2,8 +2,9 @@ import React,{useEffect, useState} from 'react'
 import CopyrightBlock from './Parts/CopyrightBlock'
 import moment from "moment/moment";
 import BeforeCopuright from './Parts/BeforeCopuright';
-import SimpleDate from 'Components/ComponentBlock/SimpleDate';
+
 import Logo from './Parts/Logo';
+import SimpleDate from '../../Components/ComponentBlock/SimpleDate';
 
 const Footer = () => {
     const [Year, setYear] = useState();

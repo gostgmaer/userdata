@@ -5,8 +5,8 @@ import Brand from "./Brand";
 import Navbar from "./Navbar";
 import Socialnavigation from "./Socialnavigation";
 import "./ComponentStyles.scss";
-import Button from "Resuable/Button/Button";
-import { REQUEST } from "api/APIService";
+import { REQUEST } from "../../api/APIService";
+
 
 
 const CustomNavigationDesign = () => {

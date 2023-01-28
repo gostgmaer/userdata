@@ -1,5 +1,5 @@
 import React from "react";
-import { notifyerror } from "Utils/Notification/notify";
+import { notifyerror } from "../../Utils/Notification/notify";
 
 const Card = ({ img }) => {
   if (img.length !== 0) {

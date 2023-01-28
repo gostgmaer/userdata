@@ -12,7 +12,7 @@ import reportWebVitals from "./reportWebVitals";
 
 import { BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import { AppProvider } from "Context/Contenxt";
+import { AppProvider } from "./Context/Contenxt";
 
 const Domain = process.env.REACT_APP_AUTH0_DOMIAN;
 const clientID = process.env.REACT_APP_AUTH0_CLIENT_ID;

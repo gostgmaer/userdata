@@ -1,5 +1,4 @@
-import SimpleDate from "Components/ComponentBlock/SimpleDate";
-import SimpleHeading from "Components/ComponentBlock/SimpleHeading";
+
 import React, { useEffect,useState } from "react";
 import Data from "./data";
 import List from "./LIst";
