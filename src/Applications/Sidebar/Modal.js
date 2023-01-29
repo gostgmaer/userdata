@@ -1,6 +1,7 @@
-import Calculator from "Applications/Calculator/Calculator";
+
 import React, { useState } from "react";
 import { RiCloseFill, RiCloseLine } from "react-icons/ri";
+import Calculator from "../Calculator/Calculator";
 
 const Modal = ({ addClass, setaddClass }) => {
   const closeBtn = () => {
@@ -9,9 +10,9 @@ const Modal = ({ addClass, setaddClass }) => {
   return (
     <div className={`modal-overlay ${addClass} `}>
       <div className="modal-container">
-        <div class="modal-dialog col-12" role="document">
-          <div class="modal-content">
-            <div class="modal-header col-12 ps-4 pe-2">
+        <div className="modal-dialog col-12" role="document">
+          <div className="modal-content">
+            <div className="modal-header col-12 ps-4 pe-2">
               <div className="col-10 text-start">
                 <h3 className="modal-title">Modal Header</h3>
               </div>
@@ -21,16 +22,16 @@ const Modal = ({ addClass, setaddClass }) => {
                 </button>
               </div>
             </div>
-            <div class="modal-body col-12 ps-4 pe-2"><Calculator></Calculator></div>
-            <div class="modal-footer col-12 ps-4 pe-2">
+            <div className="modal-body col-12 ps-4 pe-2"><Calculator></Calculator></div>
+            <div className="modal-footer col-12 ps-4 pe-2">
               <button
                 type="button"
-                class="btn btn-secondary"
+                className="btn btn-secondary"
                 data-dismiss="modal"
               >
                 Close
               </button>
-              <button type="button" class="btn btn-primary">
+              <button type="button" className="btn btn-primary">
                 Save changes
               </button>
             </div>

@@ -1,9 +1,10 @@
-import Navbar from "Components/NavigationComponents/Navbar";
-import { useGlobalContext } from "Context/Contenxt";
+
+
 import React from "react";
 import { BsAlarmFill } from "react-icons/bs";
 import { FaTimes } from "react-icons/fa";
 import { RiCloseFill, RiCloseLine } from "react-icons/ri";
+import { useGlobalContext } from "../../Context/Contenxt";
 import sublinks from "./data";
 
 const Sidebar = () => {

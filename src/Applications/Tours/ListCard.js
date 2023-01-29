@@ -52,13 +52,16 @@ const ListCard = ({ Tours, setTours }) => {
               <img
                 src={tour.image}
                 className="card-img-top img-thumbnail "
-                style={listCard}
+                style={{
+                  height: "20rem",
+                  objectFit: "cover",
+                }}
                 alt={tour.name}
               />
               <div className="card-body">
-                <div class=" d-flex m-2 ">
+                <div className=" d-flex m-2 ">
                   <span className=" fw-bold col-8 text-start">{tour.name}</span>
-                  <h6 class="col-4 text-end text-success">
+                  <h6 className="col-4 text-end text-success">
                     <span className=" rounded p-1 bg-success bg-opacity-10">
                       <BiDollar></BiDollar>
                       {tour.price}
@@ -71,17 +74,17 @@ const ListCard = ({ Tours, setTours }) => {
 
                   {readMore ? (
                     <span
-                      type="button"
+                     
                       onClick={(e) => setreadMore(false)}
-                      class="btn text-primary"
+                      className="btn text-primary"
                     >
                       Read Less
                     </span>
                   ) : (
                     <span
-                      type="button"
+                     
                       onClick={(e) => setreadMore(true)}
-                      class="btn text-primary"
+                      className="btn text-primary"
                     >
                       Read More
                     </span>

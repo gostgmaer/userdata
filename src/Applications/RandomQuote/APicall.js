@@ -30,8 +30,7 @@ export const GetQuotes = ({ options, url, value, setValue }) => {
     <button
       type="button"
       onClick={getAPIQuotes}
-      class="btn  col-8 btn-outline-success"
-    >
+      className="btn  col-8 btn-outline-success">
       Get Quotes
     </button>
   );
