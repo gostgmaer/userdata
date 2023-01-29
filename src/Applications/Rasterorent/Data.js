@@ -19,7 +19,7 @@ const DataView = () => {
           <Search setinput={setinput}></Search>
           <FilterButton People={People} setinput={setinput} ></FilterButton>
 
-          <div class="row d-flex">
+          <div className="row d-flex">
              {People.filter((data) => {
                 if (input === "") {
                   return data;

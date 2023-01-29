@@ -15,8 +15,8 @@ const WeatherApplication = () => {
   const [title] = useState("Simple Weather Application");
   const [Weather, setWeather] = useState({});
   const [city, setcity] = useState("");
-  const [lat, setlat] = useState("null");
-  const [lon, setlon] = useState("null");
+  const [lat, setlat] = useState(null);
+  const [lon, setlon] = useState(null);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((latloon) => {

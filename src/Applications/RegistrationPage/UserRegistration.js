@@ -15,7 +15,7 @@ function UserRegistration() {
     const [language, setLanguage]= useState('')
     const[email,setEmail]=useState('')
     const [address, setAddress]= useState('')
-    const firstnameRef = useRef();
+    const firstnameRef = useRef(0);
    
     useEffect(()=>{
         firstnameRef.current.focus()

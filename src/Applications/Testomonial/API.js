@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
-import { notifyerror } from 'Utils/Notification/notify'
+import { notifyerror } from '../../Utils/Notification/notify'
+
 
 
 const API = ({setreviews,count}) => {

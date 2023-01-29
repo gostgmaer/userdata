@@ -18,7 +18,7 @@ const ListShow = ({ price, item, id, ItemsList, setItemsList,idName,setbutton,se
   };
   return (
     <div>
-      <li class="list-group-item d-flex">
+      <li className="list-group-item d-flex">
         <div className="col-7 text-start">
           <span>{item}</span> ${price}
         </div>

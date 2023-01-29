@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { REQUEST } from "../../api/APIService";
 
@@ -19,7 +18,6 @@ const API = ({ setTours }) => {
     // console.log(data);
     setTours(data);
   };
-
 };
 
 export default API;

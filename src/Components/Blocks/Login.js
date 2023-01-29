@@ -8,18 +8,17 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link,Outlet } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
-import Accordian from "Applications/Accordian/Accordian";
-import Birthday from "Applications/BirthDayReminder/Birthday";
+
 
 const LOGIN_URL = "/userauth/authservice/session";
 function Login() {
   // const { setAuth } = useContext(AuthContext);
-  const userRef = useRef();
-  const errRef = useRef();
+  const userRef = useRef(null);
+  const errRef = useRef(null);
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const [errmsg, SetErrmsg] = useState("");
-  const [succcess, setSuccess] = useState();
+  const [succcess, setSuccess] = useState(null);
 
   useEffect(() => {
     userRef.current.focus();
