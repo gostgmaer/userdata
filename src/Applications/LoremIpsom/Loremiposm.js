@@ -14,12 +14,10 @@ const data = [
   `Man braid celiac synth freegan readymade, pitchfork fam salvia waistcoat lomo bitters gentrify four loko. Pitchfork semiotics post-ironic vegan. Tofu meditation microdosing hashtag semiotics venmo. Flexitarian vape tilde taiyaki. Prism poutine farm-to-table, messenger bag vegan taxidermy tattooed sartorial squid jean shorts fixie selvage trust fund vape.`,
   `Rutters Plate Fleet boom chandler Brethren of the Coast handsomely lookout marooned brigantine knave. Buccaneer gangway jack rum loot spyglass line Jack Tar fore gaff. Gaff topmast scuttle ballast swab draught measured fer yer chains dance the hempen jig Chain Shot yardarm.`,
 ];
-const Loremiposm = ({ setTitle }) => {
+const Loremiposm = () => {
   const [count, setcount] = useState(0);
   const [text, setText] = useState([]);
-  useEffect(() => {
-    setTitle("Lorem Ipsom Application");
-  }, []);
+ 
 
   const handleBtnClick = (e) => {
     if (count>=10) {
@@ -30,7 +28,7 @@ const Loremiposm = ({ setTitle }) => {
         setcount(1)
         
     }
-    if (count.length===0) {
+    if (count===0) {
         setText(data.splice(0,count));
     }
     e.preventDefault();
@@ -41,12 +39,12 @@ const Loremiposm = ({ setTitle }) => {
 
   return (
     <div>
-      <div class="card text-center">
-        <div class="card-header col-5 m-auto">
-          <div class="mb-3 d-flex">
+      <div className="card text-center">
+        <div className="card-header col-7 m-auto">
+          <div className="mb-3 d-flex">
             <input
               type="number"
-              class="form-control"
+              className="form-control"
               name="forNumber"
               id="forNumber"
               onChange={(e) => {
@@ -55,14 +53,14 @@ const Loremiposm = ({ setTitle }) => {
               aria-describedby="helpId"
               placeholder="enter number of paragraph"
             />
-            <button className=" btn btn-info col-1" onClick={handleBtnClick}>
-              <BiSearch></BiSearch>
+            <button className=" btn btn-info col-2" onClick={handleBtnClick}>
+              Submit
             </button>
           </div>
         </div>
-        <div class="card-body col-6 m-auto">
+        <div className="card-body col-6 m-auto">
           {text.length?text.map((data, index) => {
-           return (<p key={index} class="card-text">
+           return (<p key={index} className="card-text">
               {data}
             </p>)
           }):''}

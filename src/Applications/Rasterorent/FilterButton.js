@@ -22,7 +22,7 @@ const FilterButton = ({ People, setinput }) => {
         return (
           <button key={data}
             type="button"
-            class="btn m-1 btn-primary"
+            className="btn m-1 btn-primary"
             onClick={() => setInputElement(data)}
           >
             {data}

@@ -1,10 +1,8 @@
 import React , { useEffect } from "react";
 import Data from "./Data";
 
-const FoodList = ({ setTitle }) => {
-  useEffect(() => {
-    setTitle("Stock Sector People");
-  }, []);
+const FoodList = () => {
+ 
   return (
     <div>
       <Data></Data>
