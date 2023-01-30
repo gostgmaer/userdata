@@ -3,12 +3,10 @@ import APIcall, { data, param } from "./APIcall";
 import Card from "./Card";
 import SearchForm from "./SearchForm";
 
-const ImageGallery = ({ setTitle }) => {
+const ImageGallery = () => {
   const [queryData, setqueryData] = useState("house");
   const [img, setimg] = useState([]);
-  useEffect(() => {
-    setTitle("Birthday Reminder");
-  }, [setTitle]);
+ 
  
   return (
     <div>

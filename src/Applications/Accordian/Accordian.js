@@ -10,7 +10,7 @@ import AccordianCard from "./AccordianCard";
  
 // import './styles.scss'
 
-const Accordian = ({setTitle}) => {
+const Accordian = () => {
   const [Questions, setQuestions] = useState(null);
   const [loading, setLoading] = useState(false);
 

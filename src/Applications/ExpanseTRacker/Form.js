@@ -6,7 +6,7 @@ const Form = () => {
   const { setAmount, setText, addExpanse, Amount, Text } = useGlobalContext();
 
   return (
-    <div className=" col-4 m-auto justify-content-center border ">
+    <div className=" col-12 m-auto justify-content-center border ">
       
       <div className="card-header col-12">Add Transsection</div>
         <div className="card-body">

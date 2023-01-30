@@ -8,7 +8,7 @@ const ShowExpanseList = () => {
   console.log(expanseHistory);
 
   return (
-    <div className=" card col-4 m-auto justify-content-center border">
+    <div className=" card col-12 m-auto justify-content-center border">
       <div className=" card-header">History</div>
       <div className="card-body ">
         <div className=" list-group col-12">
@@ -20,7 +20,7 @@ const ShowExpanseList = () => {
             <ul className="list-group list-group-numbered">
               {expanseHistory.map((expance) => {
                 const { id, name, amount } = expance;
-                return <Transsection key={id}></Transsection>;
+                return <Transsection key={id} expance={expance}></Transsection>;
               })}
             </ul>
           )}

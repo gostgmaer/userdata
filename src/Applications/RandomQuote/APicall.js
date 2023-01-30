@@ -14,7 +14,7 @@ const APicall = ({ options, url, value, setValue }) => {
       }
     };
     Loadquote();
-  }, [options, url]);
+  }, [ ]);
 };
 export const GetQuotes = ({ options, url, value, setValue }) => {
   const getAPIQuotes = async () => {

@@ -1,19 +1,19 @@
 
 
 import React from "react";
+import { ProjectList } from "../../Assets/Mock/ProjectLists";
 import NavigationHeader from "../../Components/NavigationComponents/NavigationHeader";
-import Calculator from "../Calculator/Calculator";
+import HomeList from "./HomeList";
+import './home.scss'
 
 
 const Homepage = () => {
   return (
     <main>
       <NavigationHeader/>
-      {/* <CustomNavigationDesign></CustomNavigationDesign> */}
-      {/* <Sidebar></Sidebar> */}
-     {/* <StripMenu></StripMenu> */}
-     {/* <MultistepForm></MultistepForm> */}
-    <Calculator></Calculator>
+        <div className="container">
+          <ul className="UL">{ProjectList.map(item=><HomeList key={item.id} item={item} />)}</ul>
+        </div>
     </main>
   );
 };
