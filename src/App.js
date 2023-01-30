@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useGlobalContext } from "./Context/Contenxt";
 import Skeliton from "./Skeliton";
 import Footer from "./Applications/Footer/Footer";
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Skeliton></Skeliton>
      
       <Footer></Footer>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

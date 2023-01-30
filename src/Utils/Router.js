@@ -3,7 +3,11 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Accordian from "../Applications/Accordian/Accordian";
+import Birthday from "../Applications/BirthDayReminder/Birthday";
 import Calculator from "../Applications/Calculator";
+import ColorGenerator from "../Applications/ColorGenerator.js/ColorGenerator";
+import ContactData from "../Applications/ContactList/ContactData";
+import ExpanseTracker from "../Applications/ExpanseTRacker/ExpanseTracker";
 import FoodRecipe from "../Applications/FoodRecipe/FoodRecipe";
 import Homepage from "../Applications/Homepage/Homepage";
 import HotelListing from "../Applications/HotelListing/HotelListing";
@@ -55,9 +59,13 @@ const Router = () => {
         <Route path="/image-gallery" element={<ImageGallery></ImageGallery>}></Route>
         <Route path="/loremiposm" element={<Loremiposm></Loremiposm>}></Route>
         <Route path="/food-recipe" element={<FoodRecipe></FoodRecipe>}></Route>
+        <Route path="/expense-tracker" element={<ExpanseTracker></ExpanseTracker>}></Route>
         <Route path="/movie-listing" element={<HotelListing></HotelListing>}></Route>
-        <Route path="/food-list" element={<FoodList></FoodList>}></Route> <Route path="/quote" element={<Quotes></Quotes>}></Route>
-
+        <Route path="/food-list" element={<FoodList></FoodList>}></Route> 
+        <Route path="/quote" element={<Quotes></Quotes>}></Route>
+        <Route path="/contact-data" element={<ContactData></ContactData>}></Route>
+        <Route path="/color-generator" element={<ColorGenerator></ColorGenerator>}></Route>
+        <Route path="/birth-day-list" element={<Birthday></Birthday>}></Route>
 
       </Routes>
     </React.Fragment>

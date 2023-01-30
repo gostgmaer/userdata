@@ -1,41 +1,18 @@
 import React, { useState } from "react";
+import RecepeCard from "./RecepeCard";
 import ViewMore from "./ViewMore";
 
 const ShowRecipe = (Recipe, setRecipe) => {
-const [ingredients,setIngredients]=useState(false)
+ 
   return (
     <React.Fragment>
       <div className=" col-12  m-auto">
         <div className=" rounded-0  text-center">
           <div className="row">
-            {Recipe["Recipe"].map((val, key) => {
+            {Recipe["Recipe"].map((val) => {
               return (
-                // <div className="card col-4" key={key}>
-                //   <div className="card-body" >
-
-                //     <h4 className="card-title">{val["recipe"]["label"]}</h4>
-                //     <p className="card-text">Text</p>
-                //   </div>
-                // </div>
-                <div className="card col-3" key={key}>
-                  <img src={val["recipe"]["image"]} className=" img-thumbnail" alt={val["recipe"]["label"]}  />
-                  <div className="card-body">
-                    <h5 className="card-title">{val["recipe"]["label"]}</h5>
-                    <p className="card-text">
-                      Total Calories = {val["recipe"].calories}
-                    </p>
-                   
-                    <div class="d-flex flex-wrap">
-                      {ingredients? <button type="button" class=" m-1 btn btn-outline-info" onClick={(e)=>setIngredients(false)} aria-current="true">Hide ingredients</button>:<button type="button" class=" m-1 btn btn-outline-info" onClick={(e)=>setIngredients(true)} aria-current="true">Show ingredients</button>}
-                     
-                      
-                    </div>
-                    
-                    
-                  </div>
-                 { ingredients? <ViewMore Recipe={val} setRecipe={setRecipe} ></ViewMore>:""}
-                
-                </div>
+                <RecepeCard setRecipe={setRecipe} val={val} ></RecepeCard>
+             
               );
             })}
           </div>
@@ -46,5 +23,3 @@ const [ingredients,setIngredients]=useState(false)
 };
 
 export default ShowRecipe;
-
-

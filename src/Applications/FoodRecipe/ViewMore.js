@@ -10,22 +10,22 @@ const ViewMore = (Recipe, setRecipe) => {
           {ingredients.map((val, key) => {
             return (
               <li className=" list-group-item p-0" key={key}>
-                <div class="">
-                  <div class="row g-0">
+                <div className="">
+                  <div className="row g-0">
                   
-                    <div class="col-md-9 p-2 text-start">
-                      <div class="card-body p-0">
-                        <h6 class="card-title">{val.food}</h6>
-                        <p class="card-text">
+                    <div className="col-md-9 p-2 text-start">
+                      <div className="card-body p-0">
+                        <h6 className="card-title">{val.food}</h6>
+                        <p className="card-text">
                         {val.text}
                         </p>
                       
                       </div>
                     </div>
-                    <div class="col-md-3">
+                    <div className="col-md-3">
                       <img
                         src={val.image}
-                        class="img-fluid p-2 rounded-start"
+                        className="img-fluid p-2 rounded-start"
                         alt={val.label}
                       />
                     </div>

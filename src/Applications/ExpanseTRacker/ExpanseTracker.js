@@ -15,7 +15,7 @@ const ExpanseTracker = () => {
 // }, [])
 
   return (
-    <div className=' m-auto'>
+    <div className=' m-auto col-6'>
         <ExpanseDetails></ExpanseDetails>
         <ShowExpanseList></ShowExpanseList>
         <Form></Form>
