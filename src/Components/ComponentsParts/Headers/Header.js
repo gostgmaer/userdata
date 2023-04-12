@@ -29,15 +29,11 @@ function Header() {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="./" className="nav-link px-2 text-white">
-                  FAQs
+                <NavLink to="./search" className="nav-link px-2 text-white">
+                Search
                 </NavLink>
               </li>
-              <li>
-                <NavLink to="./" className="nav-link px-2 text-white">
-                  About
-                </NavLink>
-              </li>
+             
             </ul>
 
             <div className=" text-center">

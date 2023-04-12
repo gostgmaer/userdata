@@ -4,9 +4,9 @@ const AccordianCard = ({ item }) => {
   const [show, setshow] = useState(false);
 
   return (
-    <div class="card">
+    <div className="card">
       <div className="card-header d-flex bg-light">
-        <div className=" col-11">
+        <div className="col-11 text-start ">
           <span>{item.question}</span>
         </div>
         <div className=" col-1">
@@ -20,7 +20,7 @@ const AccordianCard = ({ item }) => {
         </div>
       </div>
       {show && (
-        <div className="card-body">
+        <div className="card-body  text-start">
           <p id="content">
             <span className="">{item.answer}</span>
           </p>

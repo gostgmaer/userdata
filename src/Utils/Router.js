@@ -4,7 +4,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Accordian from "../Applications/Accordian/Accordian";
 import Birthday from "../Applications/BirthDayReminder/Birthday";
-import Calculator from "../Applications/Calculator";
+
 import ColorGenerator from "../Applications/ColorGenerator.js/ColorGenerator";
 import ContactData from "../Applications/ContactList/ContactData";
 import ExpanseTracker from "../Applications/ExpanseTRacker/ExpanseTracker";
@@ -26,6 +26,7 @@ import ShoppingList from "../Applications/ShoppingList/ShoppingList";
 import Slider from "../Applications/Slider/Slider";
 import NotFound from "../Components/404/NotFound";
 import Registration from "../Components/Blocks/Registration";
+import Calculator from "../Applications/Calculator/Calculator";
 
 const Router = () => {
   return (

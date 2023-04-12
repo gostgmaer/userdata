@@ -1,55 +1,48 @@
 import React, { useState, useRef, useEffect } from "react";
 import {
   notifySuccess,
-  notifydefault,
   notifyerror,
-  notifyinfo,
-  notifywarning,
 } from "../../Utils/Notification/notify";
-import { ToastContainer } from "react-toastify";
-import {
-  FaBackspace,
-  FaDoorClosed,
-  FaEquals,
-  FaRegWindowClose,
-} from "react-icons/fa";
-import { BiCalendarCheck, BiEqualizer } from "react-icons/bi";
+import "./styles.scss";
+import { calcmock } from "../../Assets/Mock/MockData";
 const date = new Date().toDateString();
-function Calculator() {
+
+const RetuenaCalculator = (second) => {
   const [result, setResult] = useState("");
   const [input, setInput] = useState("");
-  const [keyvalue,SetKeyValue]=useState("");
+  const [keyvalue, SetKeyValue] = useState("");
 
-
-  const inputRef = useRef(null)
-const setInputChange = (event) =>{
-  setInput(event.target.value)
-}
-useEffect(()=>{
-  inputRef.current.focus()
-
-})
-const clickValueHanlder = (e)=>{
-setInput(input + e.target.name)
-
-}
-const calculateHandler = ()=>{
-  try {
-    setInput(eval(input).toString());
-    notifySuccess(`Your Calculated Data id ${input}`,5000) 
-  } catch (error) {
-    notifyerror(`Please Enter Valid Data ${error}`,5000)
-    
-  }
-
-}
-const backSpaceHandler = ()=>{
-  setInput(input.slice(0,input.length-1))
-}
-const clearHandler = ()=>{
-  setInput("")
-  
-}
+  const inputRef = useRef(null);
+  const setInputChange = (event) => {
+    setInput(event.target.value);
+  };
+  useEffect(() => {
+    inputRef.current.focus();
+  });
+  const clickValueHanlder = (e) => {
+    setInput(input + e.target.name);
+    console.log(input);
+  };
+  const calculateHandler = () => {
+    console.log(input);
+    try {
+      setInput(eval(input).toString());
+      setTimeout(() => {
+        notifySuccess(
+          `Your Calculated Data id ${eval(input).toString()}`,
+          5000
+        );
+      }, 200);
+    } catch (error) {
+      notifyerror(`Please Enter Valid Data ${error}`, 5000);
+    }
+  };
+  const backSpaceHandler = () => {
+    setInput(input.slice(0, input.length - 1));
+  };
+  const clearHandler = () => {
+    setInput("");
+  };
   return (
     <div>
       <div>
@@ -74,127 +67,41 @@ const clearHandler = ()=>{
                       />
                     </div>
                   </form>
-                  <div className=" card-body">
-                    <div className=" m-auto pb-4">
-                      
-                      <span> {input} </span>
-                    </div>
-                    <div className="col-sm-10 m-auto ">
-                      <div className="text-center select_button">
-                        <button onClick={clickValueHanlder}
-                          name="7"
-                          className="btn btn-outline-primary col-sm-1"
-                        >
-                          7
-                        </button>
-                        <button onClick={clickValueHanlder}
-                          name="8"
-                          className="btn btn-outline-primary col-sm-1"
-                        >
-                          8
-                        </button>
-                        <button onClick={clickValueHanlder}
-                          name="9"
-                          className="btn btn-outline-primary col-sm-1"
-                        >
-                          9
-                        </button>
-                        <button onClick={clickValueHanlder}
-                          name="/"
-                          className="btn btn-outline-primary col-sm-1"
-                        >
-                          /
-                        </button>
+                  <div className="card-body">
+                    <div className="col-sm-5 m-auto ">
+                      <div className="row  row-cols-4">
+                        {calcmock.map((item) => (
+                          <div key={item.id} className="col">
+                            <button
+                              onClick={clickValueHanlder}
+                              name={item.value}
+                              className="btn btn-outline-primary w-100 col"
+                            >
+                              {item.value}
+                            </button>
+                          </div>
+                        ))}
                       </div>
-                      <div className="text-center select_button">
-                        <button onClick={clickValueHanlder}
-                          name="4"
-                          className="btn btn-outline-primary col-sm-1"
+
+                      <div className="text-center d-flex select_button">
+                        <button
+                          onClick={backSpaceHandler}
+                          id="backSpace"
+                          className="btn btn-warning flex-1 "
                         >
-                          4
-                        </button>
-                        <button onClick={clickValueHanlder}
-                          name="5"
-                          className="btn btn-outline-primary col-sm-1"
-                        >
-                          5
-                        </button>
-                        <button onClick={clickValueHanlder}
-                          name="6"
-                          className="btn btn-outline-primary col-sm-1"
-                        >
-                          6
-                        </button>
-                        <button onClick={clickValueHanlder}
-                          name="*"
-                          className="btn btn-outline-primary col-sm-1"
-                        >
-                          x
-                        </button>
-                      </div>
-                      <div className="text-center select_button ">
-                        <button onClick={clickValueHanlder}
-                          name="1"
-                          className="btn btn-outline-primary col-sm-1"
-                        >
-                          1
-                        </button>
-                        <button onClick={clickValueHanlder}
-                          name="2"
-                          className="btn btn-outline-primary col-sm-1"
-                        >
-                          2
-                        </button>
-                        <button onClick={clickValueHanlder}
-                          name="3"
-                          className="btn btn-outline-primary col-sm-1"
-                        >
-                          3
-                        </button>
-                        <button onClick={clickValueHanlder}
-                          name="-"
-                          className="btn btn-outline-primary col-sm-1"
-                        >
-                          -
-                        </button>
-                      </div>
-                      <div className="text-center select_button">
-                        <button onClick={clickValueHanlder}
-                          name="0"
-                          className="btn btn-outline-primary col-sm-1"
-                        >
-                          0
-                        </button>
-                        <button onClick={clickValueHanlder}
-                          name="."
-                          className="btn btn-outline-primary col-sm-1"
-                        >
-                          .
-                        </button>
-                        <button onClick={clickValueHanlder}
-                          name="00"
-                          className="btn btn-outline-primary col-sm-1"
-                        >
-                          00
-                        </button>
-                        <button onClick={clickValueHanlder}
-                          name="+"
-                          className="btn btn-outline-primary col-sm-1"
-                        >
-                          +
-                        </button>
-                      </div>
-                      <div className="text-center select_button">
-                        <button onClick={backSpaceHandler}  id="backSpace" className="btn btn-warning col-sm-1">
                           D
                         </button>
-                        <button onClick={clearHandler}  id="clear" className="btn btn-danger col-sm-1">
+                        <button
+                          onClick={clearHandler}
+                          id="clear"
+                          className="btn btn-danger flex-1 "
+                        >
                           C
                         </button>
-                        <button onClick={calculateHandler}
-                         
+                        <button
+                          onClick={calculateHandler}
                           id="calculate"
-                          className="btn btn-success col-sm-2"
+                          className="btn flex-3 btn-success"
                         >
                           =
                         </button>
@@ -209,9 +116,7 @@ const clearHandler = ()=>{
           </div>
         </div>
       </div>
-      <ToastContainer></ToastContainer>
     </div>
   );
-}
-
-export default Calculator;
+};
+export default RetuenaCalculator;

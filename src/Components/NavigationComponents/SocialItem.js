@@ -30,7 +30,13 @@ const SocialItem = ({ id, text, url, icon }) => {
 
   return (
     <li className=" p-2 link-light SocialItem">
-      <a className="text-decoration-none waves-effect waves-dark" target='_blank' rel="noreferrer" style={socialColor} href={url}>
+      <a
+        className="text-decoration-none waves-effect waves-dark"
+        target="_blank"
+        rel="noreferrer"
+        style={socialColor}
+        href={url}
+      >
         {icon}
       </a>
     </li>
