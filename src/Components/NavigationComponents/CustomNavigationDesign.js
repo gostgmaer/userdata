@@ -41,7 +41,7 @@ const btnClickhandler = async()=>{
         <div className="col-6 d-block d-sm-none text-end">
           <button
             type="button"
-            class="btn btn-outline-dark"
+            className="btn btn-outline-dark"
             onClick={hamburgerHandler}
           >
             {showMenuPanel ? <RiCloseLine></RiCloseLine> : <BiMenu></BiMenu>}

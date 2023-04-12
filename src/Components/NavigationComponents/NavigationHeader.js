@@ -26,13 +26,13 @@ const NavigationHeader = () => {
   return (
     <div className="NavigationHeader">
       <header className="navigationHeader">
-        <nav class="navbar navbar-light bg-light">
-          <div class="container ">
+        <nav className="navbar navbar-light bg-light">
+          <div className="container ">
             <div className="">
               <Brand></Brand>
             </div>
             <div className=" d-flex navigation-container d-none d-sm-flex">
-              <div class=" d-flex" id="navbarSupportedContent">
+              <div className=" d-flex" id="navbarSupportedContent">
                 <div className="">
                   <Navbar></Navbar>
                 </div>
@@ -44,7 +44,7 @@ const NavigationHeader = () => {
             <div className="d-block d-sm-none">
               <button
                 type="button"
-                class="btn btn-primary"
+                className="btn btn-primary"
                 onClick={hanburgerHandler}
               >
                 {showMenu ? <RiCloseLine></RiCloseLine> : <BiMenu></BiMenu>}
