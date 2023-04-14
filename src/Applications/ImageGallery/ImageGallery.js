@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from "react";
-import APIcall, { data, param } from "./APIcall";
+import APIcall from "./APIcall";
 import Card from "./Card";
 import SearchForm from "./SearchForm";
 

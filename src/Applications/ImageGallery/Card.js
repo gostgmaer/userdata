@@ -7,10 +7,10 @@ const Card = ({ img }) => {
       <div className=" row">
         {img.results.map((image, key) => {
           return (
-            <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter hdpe" key={key}>
+            <div className="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter hdpe" key={key}>
               <img
                 src={image.urls.regular} height="300px"
-                class="img-responsive img-thumbnail"
+                className="img-responsive img-thumbnail"
                 alt={image.alt_description}
               />
             
