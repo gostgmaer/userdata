@@ -11,7 +11,7 @@ const Footer = () => {
     
     const y = new Date();
     useEffect(()=>{
-      setYear(moment(y).format("YYYY"))
+   setYear(moment(y).format("YYYY"));
     },[] )
    
   return (
